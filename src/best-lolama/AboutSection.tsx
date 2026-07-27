@@ -1,0 +1,58 @@
+import { Award } from 'lucide-react'
+import type { ValuePoint } from '../types/best-lolama.types'
+
+type AboutSectionProps = {
+  valuePoints: readonly ValuePoint[]
+}
+
+function AboutSection({ valuePoints }: AboutSectionProps) {
+  return (
+    <section id="about" className="scroll-mt-28 py-12 sm:py-16">
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+        <div className="space-y-5">
+          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">About us</p>
+          <h2 className="text-3xl font-black text-[#3B1A0E] sm:text-4xl">
+            A family brand built from passion and consistency
+          </h2>
+          <p className="text-base leading-8 text-[#6e3d25]">
+            Established in Novaliches, Quezon City, Best Lolama continues to serve families through its active
+            branches in Novaliches Town Proper and Molino, Cavite. The brand is designed around warm service,
+            memorable flavors, and a franchise model that can travel with the community.
+          </p>
+          <div className="rounded-[2rem] border border-amber-100 bg-white p-5 shadow-sm">
+            <div className="flex items-center gap-3">
+              <div className="rounded-2xl bg-amber-100 p-3 text-amber-700">
+                <Award className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-lg font-black text-[#3B1A0E]">Built for Filipino families</p>
+                <p className="text-sm text-[#7a513c]">Warm, welcoming, and easy to love from the first bite.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {valuePoints.map((point) => {
+            const Icon = point.icon
+
+            return (
+              <div
+                key={point.title}
+                className="group rounded-[2rem] border border-amber-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-700 transition group-hover:bg-amber-200">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-xl font-black text-[#3B1A0E]">{point.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#6f4a36]">{point.description}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutSection

@@ -1,0 +1,26 @@
+import type { ComponentType } from 'react'
+
+export interface MenuItem {
+  id: number
+  name: string
+  category: 'All' | 'Starter Box' | 'Premium Box' | 'Sari-Sari Box' | 'Beverages'
+  description: string
+  image: string
+  tag?: string
+  price?: string
+}
+
+export interface FranchiseTier {
+  title: string
+  space: string
+  capital: string
+  roi: string
+  featured?: boolean
+  features: string[]
+}
+
+export interface ValuePoint {
+  title: string
+  description: string
+  icon: ComponentType<{ className?: string }>
+}

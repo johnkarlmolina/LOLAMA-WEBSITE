@@ -1,0 +1,89 @@
+import { CheckCircle, Star } from 'lucide-react'
+import type { FranchiseTier } from '../types/best-lolama.types'
+
+type FranchiseSectionProps = {
+  franchiseTiers: readonly FranchiseTier[]
+  franchiseSteps: readonly string[]
+}
+
+function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionProps) {
+  return (
+    <>
+      <section id="franchise" className="scroll-mt-28 py-12 sm:py-16">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Franchise opportunities</p>
+          <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">Investment tiers with clear growth paths</h2>
+          <p className="mt-3 text-sm leading-7 text-[#6e3d25]">
+            The franchise structure is built for entrepreneurs who want a practical footprint, recognizable brand
+            equity, and support that can scale with location and territory.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {franchiseTiers.map((tier) => (
+            <article
+              key={tier.title}
+              className={`rounded-[2rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+                tier.featured ? 'border-amber-400 ring-1 ring-amber-400/40' : 'border-amber-100'
+              }`}
+            >
+              {tier.featured ? (
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.24em] text-amber-800">
+                  <Star className="h-3.5 w-3.5" />
+                  Featured
+                </div>
+              ) : null}
+              <h3 className="text-2xl font-black text-[#3B1A0E]">{tier.title}</h3>
+              <div className="mt-5 space-y-3 text-sm text-[#6e3d25]">
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Space:</span> {tier.space}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Total Capital:</span> {tier.capital}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">ROI:</span> {tier.roi}
+                </p>
+              </div>
+              <div className="mt-6 space-y-3 border-t border-amber-100 pt-5">
+                {tier.features.map((feature) => (
+                  <div key={feature} className="flex items-start gap-2 text-sm text-[#5b2d18]">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="scroll-mt-28 py-12 sm:py-16">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">How to franchise</p>
+          <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">
+            A clear 14-step journey from inquiry to launch
+          </h2>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {franchiseSteps.map((step, index) => (
+            <div
+              key={step}
+              className="rounded-[1.75rem] border border-amber-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-100 font-black text-amber-800">
+                  {index + 1}
+                </div>
+                <h3 className="text-base font-black text-[#3B1A0E]">{step}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default FranchiseSection
