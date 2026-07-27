@@ -41,7 +41,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Features Strawberry Candy, Smores, Chocolate Oreo, Bavarian and more.',
     image: '/Images/STARTER BOX/STRAWBERRY CANDY.png',
     tag: 'Popular',
-    price: '₱199',
   },
   {
     id: 2,
@@ -50,7 +49,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Dulce De Lechenuts, Quezo Duo, Biscoff Lotus, Tiramisu, Boston Cream.',
     image: '/Images/PREMIUM BOX/BOSTON CREAM.png',
     tag: 'Must Try',
-    price: '₱299',
   },
   {
     id: 3,
@@ -59,7 +57,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Ube Keso, Leche Flan ni Lola, Buko Pandan, Yema Twist.',
     image: '/Images/SARI-SARI BOX/LECHE FLAN NI LOLA.png',
     tag: 'Filipino Favorites',
-    price: '₱249',
   },
   {
     id: 4,
@@ -68,7 +65,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Rich espresso with creamy milk and sweet caramel drizzle.',
     image: '/Images/PREMIUM BOX/CARAMEL MACHIATO.png',
     tag: 'Beverage',
-    price: '₱99',
   },
 ]
 
