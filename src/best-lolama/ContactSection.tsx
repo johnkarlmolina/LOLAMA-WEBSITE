@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 
 function ContactSection() {
   return (
@@ -35,13 +35,6 @@ function ContactSection() {
                 <p className="break-all font-semibold text-sm sm:text-base">franchisebestlolama@gmail.com</p>
               </div>
             </a>
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 sm:col-span-2">
-              <MapPin className="h-5 w-5 text-amber-200" />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Head office</p>
-                <p className="font-semibold text-sm sm:text-base">Novaliches, Quezon City</p>
-              </div>
-            </div>
           </div>
         </div>
 
