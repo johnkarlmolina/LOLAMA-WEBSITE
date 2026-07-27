@@ -58,7 +58,7 @@ function AboutSection({ valuePoints }: AboutSectionProps) {
         {/* RIGHT SIDE - Video */}
         <div className="flex items-center justify-center rounded-[2rem] bg-amber-50/50 p-4">
           <video
-            src="/public/Video/Montages.mp4"  // Palitan mo ng actual filename mo
+            src="/Video/Montages.mp4"  
             autoPlay
             muted
             loop
