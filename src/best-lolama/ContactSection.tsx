@@ -78,9 +78,9 @@ function ContactSection() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             {[
-              { label: 'Facebook', href: 'https://www.facebook.com/' },
-              { label: 'Instagram', href: 'https://www.instagram.com/' },
-              { label: 'TikTok', href: 'https://www.tiktok.com/' },
+              { label: 'Facebook', href: 'https://www.facebook.com/best.lolama' },
+              { label: 'Instagram', href: 'https://www.instagram.com/bestlolama' },
+              { label: 'TikTok', href: 'https://www.tiktok.com/@bestlolama' },
             ].map((link) => (
               <a
                 key={link.label}
