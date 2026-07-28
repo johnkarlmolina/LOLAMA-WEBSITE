@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-import { Mail, MapPin, Phone } from 'lucide-react'
-import { useState } from 'react'
-=======
 import { Mail, Phone } from 'lucide-react'
->>>>>>> origin/main
+import { useState, type ChangeEvent, type FormEvent } from 'react'
+
+type SubmitStatus = 'success' | 'error' | null
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,54 +11,44 @@ function ContactSection() {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null)
   const [phoneError, setPhoneError] = useState('')
   const [emailError, setEmailError] = useState('')
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    
-    // Validate email while typing
+    setFormData((prev) => ({ ...prev, [name]: value }))
+
     if (name === 'email') {
       validateEmail(value)
     }
   }
 
-  const validateEmail = (email) => {
-    // Basic email validation pattern
+  const validateEmail = (email: string) => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    
+
     if (email && !emailPattern.test(email)) {
       setEmailError('Please enter a valid email address (e.g., name@domain.com)')
       return false
-    } else {
-      setEmailError('')
-      return true
     }
+
+    setEmailError('')
+    return true
   }
 
-  const validatePhoneNumber = (phone) => {
-    // Remove all non-digit characters
+  const validatePhoneNumber = (phone: string) => {
     const cleanPhone = phone.replace(/\D/g, '')
-    
-    // Philippine mobile number pattern - 11 digits starting with 09
-    const isValid = /^09\d{9}$/.test(cleanPhone)
-    
-    return isValid
+    return /^09\d{9}$/.test(cleanPhone)
   }
 
-  // Real-time phone validation while typing
-  const handlePhoneChange = (e) => {
+  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    // Allow only digits
     const formatted = value.replace(/\D/g, '')
-    setFormData(prev => ({ ...prev, phone: formatted }))
-    
-    // Real-time validation
+    setFormData((prev) => ({ ...prev, phone: formatted }))
+
     if (formatted.length > 0) {
       const isValid = validatePhoneNumber(formatted)
-      
+
       if (!isValid) {
         if (formatted.length < 11) {
           setPhoneError(`Need ${11 - formatted.length} more digit(s) (format: 09XXXXXXXXX)`)
@@ -77,32 +65,29 @@ function ContactSection() {
     }
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    // Validate email before submitting
+
     if (!validateEmail(formData.email)) {
       return
     }
-    
-    // Validate phone before submitting
+
     if (formData.phone && !validatePhoneNumber(formData.phone)) {
       setPhoneError('Please enter a valid Philippine mobile number')
       return
     }
-    
+
     setIsSubmitting(true)
     setSubmitStatus(null)
 
     try {
-      // Simulate API call - replace with your actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      await new Promise((resolve) => setTimeout(resolve, 1500))
       console.log('Form submitted:', formData)
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
       setPhoneError('')
       setEmailError('')
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -112,11 +97,10 @@ function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-28 py-12 sm:py-16">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-stretch">
-        {/* Left Card - Contact Info */}
         <div className="rounded-[2rem] border border-amber-100 bg-[#3B1A0E] p-6 text-white shadow-2xl shadow-amber-900/10 sm:p-8 lg:p-10">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-200">Contact us</p>
           <h2 className="mt-3 text-2xl font-black leading-tight sm:text-3xl lg:text-4xl">
-            Let's talk about your Best Lolama franchise
+            Let&apos;s talk about your Best Lolama franchise
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-amber-50/90 sm:text-[0.95rem]">
             Reach out for the latest franchise kit, site evaluation, and investment guidance. Our team can help you
@@ -131,7 +115,7 @@ function ContactSection() {
               <Phone className="h-5 w-5 text-amber-200" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Phone</p>
-                <p className="font-semibold text-sm sm:text-base">0916-697-6114</p>
+                <p className="text-sm font-semibold sm:text-base">0916-697-6114</p>
               </div>
             </a>
             <a
@@ -141,53 +125,28 @@ function ContactSection() {
               <Mail className="h-5 w-5 text-amber-200" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Email</p>
-                <p className="break-all font-semibold text-sm sm:text-base">franchisebestlolama@gmail.com</p>
+                <p className="break-all text-sm font-semibold sm:text-base">franchisebestlolama@gmail.com</p>
               </div>
             </a>
-<<<<<<< HEAD
-=======
-          </div>
-        </div>
-
-        <div className="rounded-[2rem] border border-amber-100 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
-          <div className="flex items-center gap-3">
-            <img
-              src={encodeURI('/Images/BEST LOLAMA LOGO.jpg')}
-              alt="Best Lolama"
-              className="h-10 w-10 flex-none rounded-md object-contain sm:h-11 sm:w-11"
-            />
-            <div>
-              <p className="text-base font-black text-[#3B1A0E] sm:text-lg">BEST LOLAMA</p>
-              <p className="text-xs font-medium text-amber-700 sm:text-sm">Handmade Love Doughnuts</p>
-            </div>
->>>>>>> origin/main
           </div>
 
-          {/* General Franchise Manager */}
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">
-              General Franchise Manager
-            </p>
-            <p className="font-semibold text-sm sm:text-base">Cathlenn Japson</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">General Franchise Manager</p>
+            <p className="text-sm font-semibold sm:text-base">Cathlenn Japson</p>
           </div>
 
-          {/* Website */}
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Website</p>
-            <a
-              href="https://bestlolama.com.ph"
-              className="inline-block break-all font-semibold text-sm text-white hover:text-amber-200 sm:text-base"
-            >
+            <a href="https://bestlolama.com.ph" className="inline-block break-all text-sm font-semibold text-white hover:text-amber-200 sm:text-base">
               bestlolama.com.ph
             </a>
           </div>
 
-          {/* Social media links */}
           <div className="mt-4 flex flex-wrap gap-3">
             {[
               { label: 'Facebook', href: 'https://www.facebook.com/best.lolama' },
               { label: 'Instagram', href: 'https://www.instagram.com/bestlolama' },
-              { label: 'TikTok', href: 'https://www.tiktok.com/@bestlolama' },
+              { label: 'TikTok', href: 'https://www.tiktok.com/@bestlolama' }
             ].map((link) => (
               <a
                 key={link.label}
@@ -202,11 +161,10 @@ function ContactSection() {
           </div>
         </div>
 
-        {/* Right Card - Contact Form */}
         <div className="rounded-[2rem] border border-amber-100 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="mb-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Send us a message</h3>
-            <p className="text-xs text-amber-600">Fill out the form below and we'll get back to you</p>
+            <p className="text-xs text-amber-600">Fill out the form below and we&apos;ll get back to you</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -238,15 +196,13 @@ function ContactSection() {
                 onChange={handleChange}
                 required
                 className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:outline-none focus:ring-2 transition-all duration-200 ${
-                  emailError 
-                    ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70' 
+                  emailError
+                    ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70'
                     : 'border-amber-300 bg-amber-50/50 focus:border-amber-500 focus:bg-white focus:ring-amber-200/70'
                 }`}
                 placeholder="Enter your email address"
               />
-              {emailError && (
-                <p className="mt-1 text-xs text-red-600">{emailError}</p>
-              )}
+              {emailError && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
             </div>
 
             <div>
@@ -261,17 +217,14 @@ function ContactSection() {
                 onChange={handlePhoneChange}
                 maxLength={11}
                 className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:outline-none focus:ring-2 transition-all duration-200 ${
-                  phoneError 
-                    ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70' 
+                  phoneError
+                    ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70'
                     : 'border-amber-300 bg-amber-50/50 focus:border-amber-500 focus:bg-white focus:ring-amber-200/70'
                 }`}
                 placeholder="09161234567"
               />
-              
-              {phoneError && (
-                <p className="mt-1 text-xs text-red-600">{phoneError}</p>
-              )}
-              
+
+              {phoneError && <p className="mt-1 text-xs text-red-600">{phoneError}</p>}
               <p className="mt-1 text-xs text-amber-400">Must be 11 digits starting with 09 (e.g., 09161234567)</p>
             </div>
 
@@ -291,7 +244,6 @@ function ContactSection() {
               />
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting || !!phoneError || !!emailError}
@@ -310,7 +262,6 @@ function ContactSection() {
               )}
             </button>
 
-            {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700">
                 <span className="text-lg">✓</span>
