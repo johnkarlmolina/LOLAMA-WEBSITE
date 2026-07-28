@@ -1,7 +1,12 @@
+import emailjs from '@emailjs/browser'
 import { Mail, Phone } from 'lucide-react'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 
 type SubmitStatus = 'success' | 'error' | null
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -81,13 +86,24 @@ function ContactSection() {
     setSubmitStatus(null)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      console.log('Form submitted:', formData)
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          message: formData.message,
+          to_email: 'molina.johnkarl.ponteras@gmail.com'
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
       setPhoneError('')
       setEmailError('')
-    } catch {
+    } catch (error) {
+      console.error('Failed to send message:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
