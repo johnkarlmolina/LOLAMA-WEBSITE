@@ -43,8 +43,7 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
 
           <div className="grid gap-4 sm:grid-cols-3">
             {[
-              { value: 'Novaliches, QC', label: 'Brand origin' },
-              { value: '2 Active Branches', label: 'Current stores' },
+              { value: '9 Active Branches', label: 'Current stores' },
               { value: '3 Franchise Formats', label: 'Investment paths' },
             ].map((stat) => (
               <div key={stat.label} className="rounded-3xl border border-amber-100 bg-white/90 p-4 shadow-sm">

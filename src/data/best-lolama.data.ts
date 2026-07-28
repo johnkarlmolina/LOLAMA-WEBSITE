@@ -78,7 +78,7 @@ export const FRANCHISE_TIERS: FranchiseTier[] = [
   },
   {
     title: 'Store Unit Franchise',
-    space: '35–40 sqm',
+    space: '35–60 sqm',
     capital: '₱2,050,700.00',
     roi: '~15–18 Months',
     featured: true,

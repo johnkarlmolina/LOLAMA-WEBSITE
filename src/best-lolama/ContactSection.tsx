@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
+=======
+import { Mail, Phone } from 'lucide-react'
+>>>>>>> origin/main
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -140,6 +144,23 @@ function ContactSection() {
                 <p className="break-all font-semibold text-sm sm:text-base">franchisebestlolama@gmail.com</p>
               </div>
             </a>
+<<<<<<< HEAD
+=======
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-amber-100 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
+          <div className="flex items-center gap-3">
+            <img
+              src={encodeURI('/Images/BEST LOLAMA LOGO.jpg')}
+              alt="Best Lolama"
+              className="h-10 w-10 flex-none rounded-md object-contain sm:h-11 sm:w-11"
+            />
+            <div>
+              <p className="text-base font-black text-[#3B1A0E] sm:text-lg">BEST LOLAMA</p>
+              <p className="text-xs font-medium text-amber-700 sm:text-sm">Handmade Love Doughnuts</p>
+            </div>
+>>>>>>> origin/main
           </div>
 
           {/* General Franchise Manager */}
