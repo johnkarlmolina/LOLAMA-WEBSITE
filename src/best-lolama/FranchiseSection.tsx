@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { CheckCircle, Star } from 'lucide-react'
 import type { FranchiseTier } from '../types/best-lolama.types'
 
@@ -7,6 +8,24 @@ type FranchiseSectionProps = {
 }
 
 function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionProps) {
+  const [areStepsVisible, setAreStepsVisible] = useState(false)
+  const stepsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const node = stepsRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setAreStepsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.15 },
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
       <section id="franchise" className="scroll-mt-28 py-12 sm:py-16">
@@ -59,29 +78,39 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
       </section>
 
       <section className="scroll-mt-28 py-12 sm:py-16">
-        <div className="mb-8 max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">How to franchise</p>
-          <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">
-            A clear 14-step journey from inquiry to launch
-          </h2>
-        </div>
+  <div className="mb-8 max-w-3xl">
+    <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">How to franchise</p>
+    <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">
+      A clear 14-step journey from inquiry to launch
+    </h2>
+  </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {franchiseSteps.map((step, index) => (
-            <div
-              key={step}
-              className="rounded-[1.75rem] border border-amber-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-100 font-black text-amber-800">
-                  {index + 1}
-                </div>
-                <h3 className="text-base font-black text-[#3B1A0E]">{step}</h3>
-              </div>
-            </div>
-          ))}
+  {/* Steps appear one by one as the section scrolls into view */}
+  <div ref={stepsRef} className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+    {franchiseSteps.map((step, index) => (
+      <div
+        key={step}
+        className="rounded-2xl border border-amber-100 bg-white p-6 shadow-sm transition duration-500 hover:shadow-md"
+        style={{
+          opacity: areStepsVisible ? 1 : 0,
+          transform: areStepsVisible ? 'translateY(0)' : 'translateY(16px)',
+          transitionProperty: 'opacity, transform',
+          transitionDelay: `${index * 120}ms`,
+        }}
+      >
+        <div className="flex items-center justify-between border-b border-amber-100/60 pb-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Step</span>
+          <span className="text-2xl font-black text-amber-600">
+            {String(index + 1).padStart(2, '0')}
+          </span>
         </div>
-      </section>
+        <h3 className="mt-4 text-base font-bold leading-relaxed text-[#3B1A0E]">
+          {step}
+        </h3>
+      </div>
+    ))}
+  </div>
+</section>
     </>
   )
 }

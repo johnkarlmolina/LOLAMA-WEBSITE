@@ -195,7 +195,7 @@ function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-xl border border-amber-300 bg-amber-50/50 px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200/70"
+                className="mt-1 w-full rounded-xl border border-amber-100 bg-white px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200/70"
                 placeholder="Enter your full name"
               />
             </div>
@@ -211,10 +211,10 @@ function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:outline-none focus:ring-2 transition-all duration-200 ${
+                className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:outline-none focus:ring-2 transition-all duration-200 ${
                   emailError
                     ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70'
-                    : 'border-amber-300 bg-amber-50/50 focus:border-amber-500 focus:bg-white focus:ring-amber-200/70'
+                    : 'border-amber-100 bg-white focus:border-amber-500 focus:ring-amber-200/70'
                 }`}
                 placeholder="Enter your email address"
               />
@@ -223,7 +223,7 @@ function ContactSection() {
 
             <div>
               <label htmlFor="phone" className="block text-sm font-semibold text-[#3B1A0E]">
-                Phone Number <span className="text-xs font-normal text-amber-500">(Optional)</span>
+                Phone Number <span className="text-xs font-normal text-amber-700">(Optional)</span>
               </label>
               <input
                 type="tel"
@@ -232,16 +232,16 @@ function ContactSection() {
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 maxLength={11}
-                className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:outline-none focus:ring-2 transition-all duration-200 ${
+                className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:outline-none focus:ring-2 transition-all duration-200 ${
                   phoneError
                     ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70'
-                    : 'border-amber-300 bg-amber-50/50 focus:border-amber-500 focus:bg-white focus:ring-amber-200/70'
+                    : 'border-amber-100 bg-white focus:border-amber-500 focus:ring-amber-200/70'
                 }`}
                 placeholder="09161234567"
               />
 
               {phoneError && <p className="mt-1 text-xs text-red-600">{phoneError}</p>}
-              <p className="mt-1 text-xs text-amber-400">Must be 11 digits starting with 09 (e.g., 09161234567)</p>
+              <p className="mt-1 text-xs text-[#6e3d25]/70">Must be 11 digits starting with 09 (e.g., 09161234567)</p>
             </div>
 
             <div>
@@ -255,7 +255,7 @@ function ContactSection() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="mt-1 w-full resize-none rounded-xl border border-amber-300 bg-amber-50/50 px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-amber-400/70 focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200/70"
+                className="mt-1 w-full resize-none rounded-xl border border-amber-100 bg-white px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200/70"
                 placeholder="Tell us about your franchise interest..."
               />
             </div>
