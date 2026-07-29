@@ -55,7 +55,7 @@ function Footer({ navItems }: FooterProps) {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-amber-100 pt-5 text-sm text-[#7a513c] sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Best LolamaDevs. All rights reserved.</p>
+          <p>© 2026 Best Lolama. All rights reserved.</p>
           <p>Made fresh daily for communities, families, and future franchise partners.</p>
         </div>
       </div>
