@@ -21,7 +21,7 @@ function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, navIte
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <button type="button" onClick={onLogoClick} className="flex items-center gap-3 text-left">
           <img
-            src={encodeURI('/Images/BEST LOLAMA LOGO.jpg')}
+            src={encodeURI('/Images/bg-remove-logo.png')}
             alt="Best Lolama Logo"
             className="h-12 w-auto rounded-lg object-contain"
           />
