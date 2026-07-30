@@ -77,7 +77,7 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
                       <textPath href="#textCircle" startOffset="0%">
                         • Fresh Daily • Made for Sharing ✦ Quality • Since Day One • HandMade Love ✦
                       </textPath>
-                    </text>
+                    </text> 
                   </svg>
                 </div>
                 
