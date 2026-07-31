@@ -97,7 +97,7 @@ export const FRANCHISE_STEPS = [
   'Request Kit & Submit LOI',
   'Meeting & Evaluation',
   'MOA & Franchise Agreement',
-  'Site Aquasation',
+  'Site Acquisition',
   'Location Inspection',
   'Feasibility Review',
   'Franchise Approval',

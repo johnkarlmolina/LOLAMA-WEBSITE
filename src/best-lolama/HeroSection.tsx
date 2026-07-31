@@ -41,17 +41,6 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
             </button>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { value: '9 Active Branches', label: 'Current stores' },
-              { value: '3 Franchise', label: 'Investment paths' },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-3xl border border-amber-100 bg-white/90 p-4 shadow-sm">
-                <p className="text-xl font-black text-[#3B1A0E]">{stat.value}</p>
-                <p className="mt-1 text-sm text-[#7a513c]">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
         <button
           type="button"
