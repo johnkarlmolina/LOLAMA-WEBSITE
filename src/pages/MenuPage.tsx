@@ -1,7 +1,7 @@
-import { PackageSearch } from 'lucide-react'
+import { PackageSearch, Search } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import Header, { type HeaderNavItem } from '../best-lolama/Header'
-import { MENU_CATALOG_ITEMS, MENU_CATEGORIES } from '../data/best-lolama.catalog.data'
+import { MENU_CATALOG_ITEMS, type CatalogMenuItem } from '../data/best-lolama.catalog.data'
 
 type MenuPageProps = {
   onGoAbout: () => void
@@ -10,19 +10,78 @@ type MenuPageProps = {
   onBackHome: () => void
 }
 
+const CATEGORY_GROUPS: { label: string; categories: readonly CatalogMenuItem['category'][] }[] = [
+  {
+    label: 'Food',
+    categories: [
+      'Starter Box',
+      'Premium Box',
+      'Sari-Sari Box',
+      'Royal Box',
+      'Classic Cheese',
+      'Munkchin Bites',
+      'Dubai Collection',
+    ],
+  },
+  {
+    label: 'Drinks',
+    categories: ['Drinks'],
+  },
+]
+
+function slugify(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+}
+
+function MenuListItem({ item }: { item: CatalogMenuItem }) {
+  return (
+    <div className="flex items-center gap-5">
+      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border border-amber-100 bg-amber-50">
+        <img src={encodeURI(item.image)} alt={item.name} className="h-full w-full object-cover" />
+      </div>
+      <div className="min-w-0">
+        <div className="flex items-center gap-2">
+          <p className="text-lg font-bold text-[#3B1A0E]">{item.name}</p>
+          {item.tag ? (
+            <span className="shrink-0 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-amber-800">
+              {item.tag}
+            </span>
+          ) : null}
+        </div>
+        <p className="truncate text-sm text-[#7a513c]">{item.description}</p>
+      </div>
+    </div>
+  )
+}
+
 function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState<(typeof MENU_CATEGORIES)[number]>('All')
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const filteredItems = useMemo(() => {
-    if (activeCategory === 'All') {
-      return MENU_CATALOG_ITEMS
+  const normalizedQuery = searchQuery.trim().toLowerCase()
+
+  const searchResults = useMemo(() => {
+    if (!normalizedQuery) return null
+
+    return MENU_CATALOG_ITEMS.filter(
+      (item) =>
+        item.name.toLowerCase().includes(normalizedQuery) ||
+        item.category.toLowerCase().includes(normalizedQuery) ||
+        item.description.toLowerCase().includes(normalizedQuery),
+    )
+  }, [normalizedQuery])
+
+  const itemsByCategory = useMemo(() => {
+    const map = new Map<CatalogMenuItem['category'], CatalogMenuItem[]>()
+
+    for (const item of MENU_CATALOG_ITEMS) {
+      const items = map.get(item.category) ?? []
+      items.push(item)
+      map.set(item.category, items)
     }
 
-    return MENU_CATALOG_ITEMS.filter((item) => item.category === activeCategory)
-  }, [activeCategory])
-
-  const categoryCount = activeCategory === 'All' ? MENU_CATALOG_ITEMS.length : filteredItems.length
+    return map
+  }, [])
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#fff9ef_0%,#fffdf9_40%,#fff6e8_100%)] text-[#3B1A0E]">
@@ -41,73 +100,113 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
 
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8">
         <section className="rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl space-y-4">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl space-y-3">
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Full menu page</p>
               <h1 className="text-4xl font-black leading-tight text-[#3B1A0E] sm:text-5xl">All Best Lolama menu items</h1>
               <p className="text-base leading-8 text-[#6e3d25]">
-                Browse the full catalog of doughnuts and bite-sized favorites. Click any image to inspect the brand’s
-                complete menu selection in one place.
+                Browse the full catalog of doughnuts, bites, and drinks organized by category — or search for
+                something specific.
               </p>
             </div>
 
-            <div className="rounded-3xl bg-amber-50 px-5 py-4">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-amber-700">Items shown</p>
-              <p className="mt-1 text-3xl font-black text-[#3B1A0E]">{categoryCount}</p>
+            <div className="relative w-full lg:max-w-sm">
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-amber-500" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder="Search our drinks, food..."
+                className="w-full rounded-full border border-amber-200 bg-white py-3 pl-12 pr-4 text-sm text-[#3B1A0E] shadow-sm outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-200"
+              />
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {MENU_CATEGORIES.map((category) => {
-              const isActive = activeCategory === category
+          <p className="mt-6 text-center text-xs italic text-[#7a513c] sm:text-left">
+            We cannot guarantee that any of our products are free from allergens as we use shared equipment to
+            store, prepare, and serve them.
+          </p>
 
-              return (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setActiveCategory(category)}
-                  className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
-                    isActive
-                      ? 'bg-[#3B1A0E] text-white shadow-lg shadow-amber-900/15'
-                      : 'border border-amber-200 bg-white text-[#5b2d18] hover:bg-amber-50'
-                  }`}
-                >
-                  {category}
-                </button>
-              )
-            })}
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredItems.map((item) => (
-              <article
-                key={item.id}
-                className="overflow-hidden rounded-4xl border border-amber-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="relative h-56 bg-amber-50">
-                  <img
-                    src={encodeURI(item.image)}
-                    alt={item.name}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                  <span className="absolute left-4 top-4 rounded-full bg-[#3B1A0E] px-3 py-1 text-xs font-semibold text-white shadow-lg">
-                    {item.category}
-                  </span>
-                </div>
-
-                <div className="space-y-3 p-5">
-                  <div className="flex items-start justify-between gap-3">
-                    <h2 className="text-xl font-black text-[#3B1A0E]">{item.name}</h2>
-                    {item.tag ? (
-                      <span className="shrink-0 rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800">
-                        {item.tag}
-                      </span>
-                    ) : null}
+          <div className="mt-8 grid gap-10 lg:grid-cols-[220px_1fr]">
+            {/* Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-6">
+                {CATEGORY_GROUPS.map((group) => (
+                  <div key={group.label}>
+                    <a
+                      href={`#${slugify(group.label)}`}
+                      className="text-sm font-black uppercase tracking-wide text-[#3B1A0E] hover:text-amber-700"
+                    >
+                      {group.label}
+                    </a>
+                    <ul className="mt-2 space-y-1.5 border-l border-amber-100 pl-3">
+                      {group.categories.map((category) => (
+                        <li key={category}>
+                          <a
+                            href={`#${slugify(category)}`}
+                            className="block text-sm text-[#7a513c] transition hover:text-amber-700"
+                          >
+                            {category}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-sm leading-7 text-[#6f4a36]">{item.description}</p>
+                ))}
+              </div>
+            </aside>
+
+            {/* Main content */}
+            <div className="space-y-12">
+              {searchResults ? (
+                <div>
+                  <h2 className="text-2xl font-black text-[#3B1A0E]">
+                    {searchResults.length} result{searchResults.length === 1 ? '' : 's'} for “{searchQuery}”
+                  </h2>
+                  {searchResults.length === 0 ? (
+                    <p className="mt-4 text-sm text-[#7a513c]">
+                      No items matched your search. Try a different keyword.
+                    </p>
+                  ) : (
+                    <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+                      {searchResults.map((item) => (
+                        <MenuListItem key={item.id} item={item} />
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </article>
-            ))}
+              ) : (
+                CATEGORY_GROUPS.map((group) => (
+                  <div key={group.label}>
+                    <h2 id={slugify(group.label)} className="scroll-mt-28 text-3xl font-black text-[#3B1A0E]">
+                      {group.label}
+                    </h2>
+                    <div className="mt-6 space-y-10">
+                      {group.categories.map((category) => {
+                        const items = itemsByCategory.get(category) ?? []
+                        if (items.length === 0) return null
+
+                        return (
+                          <div key={category}>
+                            <h3
+                              id={slugify(category)}
+                              className="scroll-mt-28 text-lg font-black text-amber-700"
+                            >
+                              {category}
+                            </h3>
+                            <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+                              {items.map((item) => (
+                                <MenuListItem key={item.id} item={item} />
+                              ))}
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </section>
 

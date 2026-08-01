@@ -9,6 +9,7 @@ export interface CatalogMenuItem {
     | 'Classic Cheese'
     | 'Munkchin Bites'
     | 'Dubai Collection'
+    | 'Drinks'
   description: string
   image: string
   tag?: string
@@ -23,6 +24,7 @@ export const MENU_CATEGORIES = [
   'Classic Cheese',
   'Munkchin Bites',
   'Dubai Collection',
+  'Drinks',
 ] as const
 
 export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
@@ -276,5 +278,47 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Dubai Collection',
     description: 'Pistachio-forward premium doughnut with a rich finish.',
     image: '/Images/DUBAI COLLECTION/PISTACIO SUPREME.png',
+  },
+  {
+    id: 36,
+    name: 'Biscoff Latte',
+    category: 'Drinks',
+    description: 'Espresso and milk rounded out with Biscoff caramel spice.',
+    image: '/Images/DRINKS/BISCOFF LATTE.png',
+  },
+  {
+    id: 37,
+    name: 'Cappuccino Latte',
+    category: 'Drinks',
+    description: 'Classic espresso and steamed milk with a light foam top.',
+    image: '/Images/DRINKS/CAPPUCCINO LATTE.png',
+  },
+  {
+    id: 38,
+    name: 'Caramel Macchiato',
+    category: 'Drinks',
+    description: 'Espresso layered with vanilla milk and a caramel drizzle.',
+    image: '/Images/DRINKS/CARAMEL MACCHIATO.png',
+  },
+  {
+    id: 39,
+    name: 'Coffee Blends',
+    category: 'Drinks',
+    description: 'House coffee blend brewed for a smooth, everyday cup.',
+    image: '/Images/DRINKS/COFFEE BLENDS.png',
+  },
+  {
+    id: 40,
+    name: 'Matchanese',
+    category: 'Drinks',
+    description: 'Earthy matcha blended into a creamy, refreshing drink.',
+    image: '/Images/DRINKS/MATCHANESE.png',
+  },
+  {
+    id: 41,
+    name: 'Signature Blend Chocolate',
+    category: 'Drinks',
+    description: 'Rich chocolate drink made with Best Lolama\'s signature blend.',
+    image: '/Images/DRINKS/SIGNATURE BLEND CHOCOLATE.png',
   },
 ]
