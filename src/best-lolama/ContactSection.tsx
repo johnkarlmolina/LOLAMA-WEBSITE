@@ -95,7 +95,7 @@ function ContactSection() {
           phone: formData.phone || 'Not provided',
           message: formData.message,
           to_email: 'molina.johnkarl.ponteras@gmail.com'
-        },
+        },  
         { publicKey: EMAILJS_PUBLIC_KEY }
       )
       setSubmitStatus('success')
@@ -113,7 +113,7 @@ function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-28 py-12 sm:py-16">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-stretch">
-        <div className="rounded-[2rem] border border-amber-100 bg-[#3B1A0E] p-6 text-white shadow-2xl shadow-amber-900/10 sm:p-8 lg:p-10">
+        <div className="rounded-4xl border border-amber-100 bg-[#3B1A0E] p-6 text-white shadow-2xl shadow-amber-900/10 sm:p-8 lg:p-10">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-200">Contact us</p>
           <h2 className="mt-3 text-2xl font-black leading-tight sm:text-3xl lg:text-4xl">
             Let&apos;s talk about your Best Lolama franchise
@@ -169,7 +169,7 @@ function ContactSection() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-w-[7.5rem] flex-1 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20 sm:flex-none"
+                className="inline-flex min-w-30 flex-1 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20 sm:flex-none"
               >
                 {link.label}
               </a>
@@ -177,7 +177,7 @@ function ContactSection() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-amber-100 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="rounded-4xl border border-amber-100 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="mb-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Send us a message</h3>
             <p className="text-xs text-amber-600">Fill out the form below and we&apos;ll get back to you</p>

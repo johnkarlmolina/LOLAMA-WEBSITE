@@ -36,7 +36,7 @@ function FranchisePage({ onGoHome, onGoMenu, onGoAbout, onGoContact }: Franchise
           <h1 className="mt-3 text-4xl font-black leading-tight text-[#3B1A0E] sm:text-5xl">
             Investment tiers with clear growth paths
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-[#6e3d25]">
+          <p className="mt-4 text-base leading-8 text-[#6e3d25]">
             The franchise structure is built for entrepreneurs who want a practical footprint, recognizable brand
             equity, and support that can scale with location and territory.
           </p>

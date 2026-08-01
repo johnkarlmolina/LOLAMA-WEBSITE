@@ -34,7 +34,7 @@ function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise }: ContactPa
           <h1 className="mt-3 text-3xl font-black leading-tight text-[#3B1A0E] sm:text-4xl lg:text-5xl">
             Talk to the Best Lolama team
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#6e3d25] sm:text-base sm:leading-8">
+          <p className="mt-4 text-sm leading-7 text-[#6e3d25] sm:text-base sm:leading-8">
             Reach out for the latest franchise kit, site evaluation, and investment guidance. Our team can help you
             identify the right format for your location and target community.
           </p>
