@@ -63,7 +63,7 @@ function MenuHighlightsSection({
               key={item.id}
               type="button"
               onClick={onOpenMenuPage}
-              className="group overflow-hidden rounded-[2rem] border border-amber-100 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
+              className="group overflow-hidden rounded-4xl border border-amber-100 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
             >
               <div className="relative h-48 bg-amber-50">
                 {!imageFailed ? (

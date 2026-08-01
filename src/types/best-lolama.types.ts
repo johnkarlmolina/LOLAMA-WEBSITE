@@ -3,7 +3,15 @@ import type { ComponentType } from 'react'
 export interface MenuItem {
   id: number
   name: string
-  category: 'All' | 'Starter Box' | 'Premium Box' | 'Sari-Sari Box' | 'Beverages'
+  category:
+    | 'All'
+    | 'Starter Box'
+    | 'Premium Box'
+    | 'Sari-Sari Box'
+    | 'Royal Box'
+    | 'Classic Cheese'
+    | 'Dubai Collection'
+    | 'Munkchin Bites'
   description: string
   image: string
   tag?: string
