@@ -122,11 +122,6 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
             </div>
           </div>
 
-          <p className="mt-6 text-center text-xs italic text-[#7a513c] sm:text-left">
-            We cannot guarantee that any of our products are free from allergens as we use shared equipment to
-            store, prepare, and serve them.
-          </p>
-
           <div className="mt-8 grid gap-10 lg:grid-cols-[220px_1fr]">
             {/* Sidebar */}
             <aside className="hidden lg:block">
