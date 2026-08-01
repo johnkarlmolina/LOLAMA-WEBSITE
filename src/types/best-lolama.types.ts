@@ -23,6 +23,12 @@ export interface FranchiseTier {
   space: string
   capital: string
   roi: string
+  adminfee: string
+  franchisefee: string
+  trainingopeningsupport: string
+  renewalat50offranchisefee: string
+  fullcafesetupwithproduction: string
+  systemstandard: string
   featured?: boolean
   features: string[]
 }

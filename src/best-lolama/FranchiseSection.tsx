@@ -63,6 +63,24 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
                 <p>
                   <span className="font-bold text-[#3B1A0E]">ROI:</span> {tier.roi}
                 </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Admin Fee:</span> {tier.adminfee}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Franchise Fee:</span> {tier.franchisefee}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Training:</span> {tier.trainingopeningsupport}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Renewal:</span> {tier.renewalat50offranchisefee}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">Full:</span> {tier.fullcafesetupwithproduction}
+                </p>
+                <p>
+                  <span className="font-bold text-[#3B1A0E]">System:</span> {tier.systemstandard}
+                </p>
               </div>
               <div className="mt-6 space-y-3 border-t border-amber-100 pt-5">
                 {tier.features.map((feature) => (
