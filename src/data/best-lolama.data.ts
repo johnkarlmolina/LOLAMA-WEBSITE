@@ -166,6 +166,14 @@ export const MENU_ITEMS: MenuItem[] = [
     image: '/Images/SARI-SARI BOX/LECHE FLAN NI LOLA.png',
     tag: 'Best Seller',
   },
+  {
+    id: 8,
+    name: 'Strawberry Candy',
+    category: 'Starter Box',
+    description: 'Colorful strawberry glaze with festive sprinkles.',
+    image: '/Images/STARTER BOX/STRAWBERRY CANDY.png',
+    tag: 'Best Seller',
+  },
 ]
 
 export const FRANCHISE_TIERS: FranchiseTier[] = [
