@@ -95,7 +95,7 @@ function ContactSection() {
           phone: formData.phone || 'Not provided',
           message: formData.message,
           to_email: 'molina.johnkarl.ponteras@gmail.com'
-        },
+        },  
         { publicKey: EMAILJS_PUBLIC_KEY }
       )
       setSubmitStatus('success')
