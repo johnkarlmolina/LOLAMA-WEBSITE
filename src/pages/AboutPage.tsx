@@ -4,7 +4,14 @@ import Footer from '../best-lolama/Footer'
 import Header, { type HeaderNavItem } from '../best-lolama/Header'
 import PartnerMarqueeSection from '../best-lolama/PartnerMarqueeSection'
 import VisionMissionSection from '../best-lolama/VisionMissionSection'
-import { CORE_VALUES, MISSION_TEXT, PARTNERS, VALUE_POINTS, VISION_TEXT } from '../data/best-lolama.data'
+import {
+  ABOUT_US_PARAGRAPHS,
+  CORE_VALUES,
+  MISSION_TEXT,
+  PARTNERS,
+  VALUE_POINTS,
+  VISION_TEXT,
+} from '../data/best-lolama.data'
 
 type AboutPageProps = {
   onGoHome: () => void
@@ -37,15 +44,17 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
           <h1 className="mt-3 text-4xl font-black leading-tight text-[#3B1A0E] sm:text-5xl">
             A family brand built from passion and consistency
           </h1>
-          <p className="mt-4 text-base leading-8 text-[#6e3d25]">
-            Established in Novaliches, Quezon City, Best Lolama continues to serve families through its active
-            branches in Novaliches Town Proper and Molino, Cavite. The brand is designed around warm service,
-            memorable flavors, and a franchise model that can travel with the community.
-          </p>
+          <div className="mt-4 space-y-4">
+            {ABOUT_US_PARAGRAPHS.map((paragraph) => (
+              <p key={paragraph} className="text-base leading-8 text-[#6e3d25]">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </section>
 
         <div className="mt-10">
-          <AboutSection valuePoints={VALUE_POINTS} />
+          <AboutSection valuePoints={VALUE_POINTS} showLabel={false} />
         </div>
 
         <div className="mt-10">
