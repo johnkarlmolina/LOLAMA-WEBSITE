@@ -3,15 +3,18 @@ import type { ValuePoint } from '../types/best-lolama.types'
 
 type AboutSectionProps = {
   valuePoints: readonly ValuePoint[]
+  showLabel?: boolean
 }
 
-function AboutSection({ valuePoints }: AboutSectionProps) {
+function AboutSection({ valuePoints, showLabel = true }: AboutSectionProps) {
   return (
     <section id="about" className="scroll-mt-28 py-12 sm:py-16">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         {/* LEFT SIDE */}
         <div className="space-y-5">
-          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">About us</p>
+          {showLabel ? (
+            <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">About us</p>
+          ) : null}
           <h2 className="text-3xl font-black text-[#3B1A0E] sm:text-4xl">
             A family brand built from passion and consistency
           </h2>

@@ -45,6 +45,16 @@ export const VALUE_POINTS: ValuePoint[] = [
   },
 ]
 
+export const ABOUT_US_PARAGRAPHS = [
+  'Best Lolama – Handmade Love Doughnuts & Café was established in 2022 in the heart of Novaliches, Quezon City, with a simple mission: to serve premium-quality, handcrafted donuts that are delicious, affordable, and made with love.',
+  'Our signature donuts are known for their soft, high-quality dough and perfectly balanced sweetness—never too sweet, just right. We proudly offer a wide variety of freshly made products, including our best-selling Classic Cheese, Glazed, and Ube donuts, along with Starter Donuts, Premium Donuts, and Special Donuts. To complement every bite, we also serve freshly brewed coffee, refreshing frappes, and flavorful milk teas.',
+  'At Best Lolama, we continuously innovate by creating Filipino-inspired flavors that celebrate local taste and craftsmanship. We take pride in producing products that are proudly made in the Philippines and worthy of sharing with every Filipino family.',
+  'Best Lolama has grown to 22 franchise branches across the Philippines, with two company-owned branches located in Novaliches Town Proper and Molino, Cavite. As demand for our brand continues to grow, we have expanded our franchise program to give aspiring entrepreneurs the opportunity to build a successful business with a trusted and fast-growing brand.',
+  'Our goal is to bring Best Lolama to more communities through strategically located stores and innovative cart concepts, making our premium donuts more accessible to customers nationwide.',
+  'Every donut we create reflects our commitment to quality, value, consistency, and heartfelt service. What started as a dream has become a growing family of passionate entrepreneurs and loyal customers who believe that great food is made with love.',
+  'Best Lolama is more than just a donut shop—it’s a proudly Filipino brand dedicated to creating memorable moments, supporting local entrepreneurship, and spreading happiness one handcrafted donut at a time.',
+]
+
 export const VISION_TEXT =
   'To become the Philippines’ leading and most loved handcrafted doughnut brand, recognized for exceptional quality, innovation, and heartfelt service. We envision Best Lolama in communities across the nation and beyond, bringing families and friends together through products made with love and excellence. By empowering entrepreneurs through successful franchise partnerships, creating meaningful employment, and championing proudly Filipino craftsmanship, we aspire to build a lasting legacy of growth, opportunity, and shared success.'
 
