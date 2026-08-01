@@ -22,7 +22,7 @@ function AboutSection({ valuePoints }: AboutSectionProps) {
           </p>
 
           {/* Built for Filipino families - original size, nasa left side na */}
-          <div className="rounded-[2rem] border border-amber-100 bg-white p-5 shadow-sm">
+          <div className="rounded-4xl border border-amber-100 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3">
               <div className="rounded-2xl bg-amber-100 p-3 text-amber-700">
                 <Award className="h-6 w-6" />
@@ -56,14 +56,14 @@ function AboutSection({ valuePoints }: AboutSectionProps) {
         </div>
 
         {/* RIGHT SIDE - Video */}
-        <div className="flex items-center justify-center rounded-[2rem] bg-amber-50/50 p-4">
+        <div className="flex items-center justify-center rounded-4xl bg-amber-50/50 p-4">
           <video
             src="/Video/Montages.mp4"  
             autoPlay
             muted
             loop
             playsInline
-            className="w-[80%] max-w-[400px] rounded-2xl shadow-lg pointer-events-none select-none"
+            className="w-[80%] max-w-100 rounded-2xl shadow-lg pointer-events-none select-none"
             draggable={false}
             controls={false}
             disablePictureInPicture

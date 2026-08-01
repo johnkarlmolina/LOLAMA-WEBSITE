@@ -42,7 +42,7 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
           {franchiseTiers.map((tier) => (
             <article
               key={tier.title}
-              className={`rounded-[2rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+              className={`rounded-4xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
                 tier.featured ? 'border-amber-400 ring-1 ring-amber-400/40' : 'border-amber-100'
               }`}
             >

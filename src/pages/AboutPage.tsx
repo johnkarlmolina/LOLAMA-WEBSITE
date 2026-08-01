@@ -32,7 +32,7 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
       />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
-        <section className="rounded-[2rem] border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <section className="rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">About us</p>
           <h1 className="mt-3 text-4xl font-black leading-tight text-[#3B1A0E] sm:text-5xl">
             A family brand built from passion and consistency
