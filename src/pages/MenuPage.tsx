@@ -40,7 +40,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
       />
 
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8">
-        <section className="rounded-[2rem] border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <section className="rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl space-y-4">
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Full menu page</p>
@@ -51,7 +51,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
               </p>
             </div>
 
-            <div className="rounded-[1.5rem] bg-amber-50 px-5 py-4">
+            <div className="rounded-3xl bg-amber-50 px-5 py-4">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-amber-700">Items shown</p>
               <p className="mt-1 text-3xl font-black text-[#3B1A0E]">{categoryCount}</p>
             </div>
@@ -82,7 +82,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
             {filteredItems.map((item) => (
               <article
                 key={item.id}
-                className="overflow-hidden rounded-[2rem] border border-amber-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
+                className="overflow-hidden rounded-4xl border border-amber-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
               >
                 <div className="relative h-56 bg-amber-50">
                   <img
@@ -111,7 +111,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
           </div>
         </section>
 
-        <section className="mt-10 rounded-[2rem] border border-amber-100 bg-[#3B1A0E] p-8 text-white shadow-2xl shadow-amber-900/10">
+        <section className="mt-10 rounded-4xl border border-amber-100 bg-[#3B1A0E] p-8 text-white shadow-2xl shadow-amber-900/10">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-200">Need help?</p>

@@ -58,7 +58,16 @@ function BestLolamaLandingPage({
         <AboutSection valuePoints={VALUE_POINTS} />
         <MenuHighlightsSection
           activeCategory={activeCategory}
-          categories={['All', 'Starter Box', 'Premium Box', 'Sari-Sari Box', 'Beverages']}
+          categories={[
+            'All',
+            'Royal Box',
+            'Classic Cheese',
+            'Dubai Collection',
+            'Premium Box',
+            'Starter Box',
+            'Munkchin Bites',
+            'Sari-Sari Box',
+          ]}
           filteredItems={filteredItems}
           imageErrors={imageErrors}
           onCategoryChange={setActiveCategory}
