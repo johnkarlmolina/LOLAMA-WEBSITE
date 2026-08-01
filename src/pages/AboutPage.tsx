@@ -3,7 +3,8 @@ import AboutSection from '../best-lolama/AboutSection'
 import Footer from '../best-lolama/Footer'
 import Header, { type HeaderNavItem } from '../best-lolama/Header'
 import PartnerMarqueeSection from '../best-lolama/PartnerMarqueeSection'
-import { PARTNERS, VALUE_POINTS } from '../data/best-lolama.data'
+import VisionMissionSection from '../best-lolama/VisionMissionSection'
+import { CORE_VALUES, MISSION_TEXT, PARTNERS, VALUE_POINTS, VISION_TEXT } from '../data/best-lolama.data'
 
 type AboutPageProps = {
   onGoHome: () => void
@@ -31,12 +32,12 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
       />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
-        <section className="rounded-[2rem] border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <section className="rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">About us</p>
           <h1 className="mt-3 text-4xl font-black leading-tight text-[#3B1A0E] sm:text-5xl">
             A family brand built from passion and consistency
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-[#6e3d25]">
+          <p className="mt-4 text-base leading-8 text-[#6e3d25]">
             Established in Novaliches, Quezon City, Best Lolama continues to serve families through its active
             branches in Novaliches Town Proper and Molino, Cavite. The brand is designed around warm service,
             memorable flavors, and a franchise model that can travel with the community.
@@ -45,6 +46,10 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
 
         <div className="mt-10">
           <AboutSection valuePoints={VALUE_POINTS} />
+        </div>
+
+        <div className="mt-10">
+          <VisionMissionSection vision={VISION_TEXT} mission={MISSION_TEXT} coreValues={CORE_VALUES} />
         </div>
 
         <div className="mt-10">

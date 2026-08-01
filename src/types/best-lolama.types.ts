@@ -24,3 +24,9 @@ export interface ValuePoint {
   description: string
   icon: ComponentType<{ className?: string }>
 }
+
+export interface CoreValue {
+  title: string
+  description: string
+  icon: ComponentType<{ className?: string }>
+}
