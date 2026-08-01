@@ -1,5 +1,17 @@
-import { CheckCircle, MapPin, ShoppingBag, Star } from 'lucide-react'
-import type { FranchiseTier, MenuItem, ValuePoint } from '../types/best-lolama.types'
+import {
+  Award,
+  CheckCircle,
+  Heart,
+  Lightbulb,
+  MapPin,
+  ShieldCheck,
+  ShoppingBag,
+  Smile,
+  Star,
+  TrendingUp,
+  Users,
+} from 'lucide-react'
+import type { CoreValue, FranchiseTier, MenuItem, ValuePoint } from '../types/best-lolama.types'
 
 export const NAV_ITEMS = [
   { label: 'About Us', href: '#about' },
@@ -30,6 +42,60 @@ export const VALUE_POINTS: ValuePoint[] = [
     title: 'Quality Ingredients',
     description: 'Freshly prepared doughnuts with rich fillings, premium toppings, and dependable supply standards.',
     icon: CheckCircle,
+  },
+]
+
+export const VISION_TEXT =
+  'To become the Philippines’ leading and most loved handcrafted doughnut brand, recognized for exceptional quality, innovation, and heartfelt service. We envision Best Lolama in communities across the nation and beyond, bringing families and friends together through products made with love and excellence. By empowering entrepreneurs through successful franchise partnerships, creating meaningful employment, and championing proudly Filipino craftsmanship, we aspire to build a lasting legacy of growth, opportunity, and shared success.'
+
+export const MISSION_TEXT =
+  'At Best Lolama Inc., our mission is to create premium handcrafted doughnuts made with love, passion, and uncompromising quality. We are committed to delivering delicious, affordable products that bring happiness to every Filipino family while celebrating local flavors and craftsmanship. Beyond serving great food, we strive to build opportunities that transform lives through meaningful employment and accessible franchise opportunities.'
+
+export const CORE_VALUES: CoreValue[] = [
+  {
+    title: 'Love',
+    description: 'Everything we create begins with love, put into every doughnut, interaction, and partnership.',
+    icon: Heart,
+  },
+  {
+    title: 'Quality',
+    description: 'Quality ingredients and high standards behind every fresh, delicious product.',
+    icon: CheckCircle,
+  },
+  {
+    title: 'Integrity',
+    description: 'Honesty, transparency, and accountability that earn lasting trust.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Customer Delight',
+    description: 'Outstanding products and service that create memorable experiences.',
+    icon: Smile,
+  },
+  {
+    title: 'Innovation',
+    description: 'Continuous improvement through creativity and exciting new flavors.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Teamwork',
+    description: 'Collaboration and shared purpose as one Best Lolama family.',
+    icon: Users,
+  },
+  {
+    title: 'Empowerment',
+    description: 'Opportunities for employees and franchise partners to grow and succeed.',
+    icon: TrendingUp,
+  },
+  {
+    title: 'Community',
+    description: 'Supporting local communities and Filipino craftsmanship wherever we operate.',
+    icon: MapPin,
+  },
+  {
+    title: 'Excellence',
+    description: 'Pursuing the best in quality, safety, service, and operations.',
+    icon: Award,
   },
 ]
 
