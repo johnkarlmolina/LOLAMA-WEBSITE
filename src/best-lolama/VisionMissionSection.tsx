@@ -16,7 +16,7 @@ function VisionMissionSection({ vision, mission, coreValues }: VisionMissionSect
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <article className="rounded-[2rem] border border-amber-100 bg-white p-6 shadow-sm sm:p-8">
+        <article className="rounded-4xl border border-amber-100 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-center gap-3">
             <div className="rounded-2xl bg-amber-100 p-3 text-amber-700">
               <Compass className="h-6 w-6" />
@@ -26,7 +26,7 @@ function VisionMissionSection({ vision, mission, coreValues }: VisionMissionSect
           <p className="mt-4 text-sm leading-7 text-[#6e3d25]">{vision}</p>
         </article>
 
-        <article className="rounded-[2rem] border border-amber-100 bg-white p-6 shadow-sm sm:p-8">
+        <article className="rounded-4xl border border-amber-100 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-center gap-3">
             <div className="rounded-2xl bg-amber-100 p-3 text-amber-700">
               <Target className="h-6 w-6" />

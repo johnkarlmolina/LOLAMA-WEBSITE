@@ -20,7 +20,7 @@ function PartnerMarqueeSection({ partners }: PartnerMarqueeSectionProps) {
         </div>
       </div>
       
-      <div className="overflow-hidden rounded-[2rem] border border-amber-100 bg-white/90 p-4 shadow-sm">
+      <div className="overflow-hidden rounded-4xl border border-amber-100 bg-white/90 p-4 shadow-sm">
         <div className="marquee-track gap-4 py-2">
           {[...partners, ...partners].map((partner, index) => {
             const normalizedPartner = partner.trim().toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
@@ -29,13 +29,13 @@ function PartnerMarqueeSection({ partners }: PartnerMarqueeSectionProps) {
             return (
               <div
                 key={`${partner}-${index}`}
-                className="flex min-w-[220px] items-center justify-center rounded-3xl border border-amber-100 bg-amber-50 px-6 py-5 shadow-sm"
+                className="flex min-w-55 items-center justify-center rounded-3xl border border-amber-100 bg-amber-50 px-6 py-5 shadow-sm"
               >
                 {imageFile ? (
                   <img
                     src={`/Images/PARTNERSHIP/${imageFile}`}
                     alt={`${partner} logo`}
-                    className="h-16 w-full max-w-[180px] object-contain"
+                    className="h-16 w-full max-w-45 object-contain"
                   />
                 ) : (
                   <p className="text-lg font-black tracking-[0.18em] text-[#3B1A0E]">{partner}</p>

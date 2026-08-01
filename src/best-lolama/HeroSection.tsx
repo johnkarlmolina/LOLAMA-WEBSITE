@@ -45,14 +45,14 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
         <button
           type="button"
           onClick={onOpenMenuPage}
-          className="relative w-full max-w-[24rem] justify-self-center text-left lg:max-w-[34rem] lg:justify-self-end"
+          className="relative w-full max-w-[24rem] justify-self-center text-left lg:max-w-136 lg:justify-self-end"
         >
           {/* Background Effects */}
           <div className="absolute -left-4 top-6 h-20 w-20 rounded-full bg-amber-300/35 blur-2xl" />
           <div className="absolute -right-6 bottom-8 h-24 w-24 rounded-full bg-amber-500/25 blur-2xl" />
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-amber-100 bg-white p-4 shadow-[0_20px_60px_rgba(123,64,27,0.12)] sm:p-5">
-            <div className="rounded-[1.5rem] bg-[linear-gradient(180deg,#fff7e8_0%,#fff0d1_100%)] p-4 sm:p-6">
+          <div className="relative overflow-hidden rounded-4xl border border-amber-100 bg-white p-4 shadow-[0_20px_60px_rgba(123,64,27,0.12)] sm:p-5">
+            <div className="rounded-3xl bg-[linear-gradient(180deg,#fff7e8_0%,#fff0d1_100%)] p-4 sm:p-6">
               {/* Logo na may umiikot na text */}
               <div className="mb-5 flex justify-center sm:mb-6">
                 <div className="relative aspect-square w-full max-w-[18rem] sm:max-w-[20rem]">
