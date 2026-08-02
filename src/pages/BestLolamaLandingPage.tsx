@@ -14,6 +14,8 @@ type BestLolamaLandingPageProps = {
   onGoMenu: () => void
   onGoFranchise: () => void
   onGoContact: () => void
+  onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
   onOpenMenuPage: () => void
 }
 
@@ -22,6 +24,8 @@ function BestLolamaLandingPage({
   onGoMenu,
   onGoFranchise,
   onGoContact,
+  onGoRecognitionAwards,
+  onFranchiseNowClick,
   onOpenMenuPage,
 }: BestLolamaLandingPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -38,10 +42,12 @@ function BestLolamaLandingPage({
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onOpenMenuPage, current: false },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />
@@ -65,6 +71,7 @@ function BestLolamaLandingPage({
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />

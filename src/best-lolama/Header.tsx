@@ -12,10 +12,11 @@ type HeaderProps = {
   onToggleMenu: () => void
   onCloseMenu: () => void
   onLogoClick?: () => void
+  onFranchiseNowClick: () => void
   navItems: readonly HeaderNavItem[]
 }
 
-function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, navItems }: HeaderProps) {
+function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, onFranchiseNowClick, navItems }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-amber-200/70 bg-white/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
@@ -60,12 +61,13 @@ function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, navIte
               </span>
             )
           ))}
-          <a
-            href="#franchise"
+          <button
+            type="button"
+            onClick={onFranchiseNowClick}
             className="inline-flex items-center rounded-full bg-[#3B1A0E] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-amber-900/15 transition hover:-translate-y-0.5 hover:bg-amber-700"
           >
             Franchise Now
-          </a>
+          </button>
         </nav>
 
         <button
@@ -113,13 +115,16 @@ function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, navIte
                 </span>
               )
             ))}
-            <a
-              href="#franchise"
-              onClick={onCloseMenu}
+            <button
+              type="button"
+              onClick={() => {
+                onFranchiseNowClick()
+                onCloseMenu()
+              }}
               className="inline-flex items-center justify-center rounded-2xl bg-[#3B1A0E] px-4 py-3 text-sm font-semibold text-white transition hover:bg-amber-700"
             >
               Franchise Now
-            </a>
+            </button>
           </div>
         </div>
       ) : null}

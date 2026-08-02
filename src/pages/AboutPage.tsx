@@ -18,9 +18,18 @@ type AboutPageProps = {
   onGoMenu: () => void
   onGoFranchise: () => void
   onGoContact: () => void
+  onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
 }
 
-function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPageProps) {
+function AboutPage({
+  onGoHome,
+  onGoMenu,
+  onGoFranchise,
+  onGoContact,
+  onGoRecognitionAwards,
+  onFranchiseNowClick,
+}: AboutPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -30,10 +39,12 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onGoHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', current: true },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />
@@ -71,6 +82,7 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact }: AboutPage
           { label: 'About Us', current: true },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />
