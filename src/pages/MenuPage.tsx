@@ -47,7 +47,7 @@ function MenuListItem({ item, onImageClick }: { item: CatalogMenuItem; onImageCl
       </button>
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <p className="break-words text-base font-bold text-[#3B1A0E] sm:text-lg">{item.name}</p>
+          <p className="wrap-break-word text-base font-bold text-[#3B1A0E] sm:text-lg">{item.name}</p>
           {item.tag ? (
             <span className="shrink-0 whitespace-nowrap rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-amber-800">
               {item.tag}
