@@ -2,56 +2,23 @@ import { ShoppingBag } from 'lucide-react'
 import type { MenuItem } from '../types/best-lolama.types'
 
 type MenuHighlightsSectionProps = {
-  activeCategory: string
-  categories: readonly string[]
   filteredItems: readonly MenuItem[]
   imageErrors: Record<number, boolean>
-  onCategoryChange: (category: string) => void
   onImageError: (itemId: number) => void
   onOpenMenuPage: () => void
 }
 
 function MenuHighlightsSection({
-  activeCategory,
-  categories,
   filteredItems,
   imageErrors,
-  onCategoryChange,
   onImageError,
   onOpenMenuPage,
 }: MenuHighlightsSectionProps) {
   return (
     <section id="menu" className="scroll-mt-28 py-12 sm:py-16">
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Menu highlights</p>
-          <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">Popular boxes and drinks</h2>
-        </div>
-        <p className="max-w-xl text-sm leading-7 text-[#6e3d25]">
-          Browse the most requested items and see how the signature boxes and beverages fit into the Best Lolama
-          experience.
-        </p>
-      </div>
-
-      <div className="mb-6 flex flex-wrap gap-3">
-        {categories.map((category) => {
-          const isActive = activeCategory === category
-
-          return (
-            <button
-              key={category}
-              type="button"
-              onClick={() => onCategoryChange(category)}
-              className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
-                isActive
-                  ? 'bg-[#3B1A0E] text-white shadow-lg shadow-amber-900/15'
-                  : 'border border-amber-200 bg-white text-[#5b2d18] hover:bg-amber-50'
-              }`}
-            >
-              {category}
-            </button>
-          )
-        })}
+      <div className="mb-8">
+        <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Menu highlights</p>
+        <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">Popular boxes and drinks</h2>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
