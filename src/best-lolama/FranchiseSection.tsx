@@ -29,7 +29,7 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
   return (
     <>
       <section id="franchise" className="scroll-mt-28 py-12 sm:py-16">
-        <div className="mb-8 max-w-3xl">
+        <div className="mb-8">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Franchise opportunities</p>
           <h2 className="mt-2 text-3xl font-black text-[#3B1A0E] sm:text-4xl">Investment tiers with clear growth paths</h2>
           <p className="mt-3 text-sm leading-7 text-[#6e3d25]">
