@@ -58,3 +58,37 @@ input[type="button"] {
     animation: none;
   }
 }
+
+.swal-compact-popup {
+  width: min(92vw, 420px);
+  border-radius: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .swal-compact-popup {
+    padding: 1rem;
+  }
+
+  .swal-compact-popup .swal2-title {
+    font-size: 1.25rem;
+  }
+
+  .swal-compact-popup .swal2-html-container {
+    font-size: 0.875rem;
+  }
+
+  .swal-compact-popup .swal2-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 1rem auto;
+  }
+
+  .swal-compact-popup .swal2-actions {
+    margin-top: 1rem;
+  }
+
+  .swal-compact-popup .swal2-confirm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}

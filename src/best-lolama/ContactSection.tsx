@@ -88,6 +88,7 @@ function ContactSection() {
         title: 'Message sent!',
         text: 'Thanks for reaching out — our team will get back to you soon.',
         confirmButtonColor: '#3B1A0E',
+        customClass: { popup: 'swal-compact-popup' },
       })
     } catch (error) {
       console.error('Failed to send message:', error)
@@ -96,6 +97,7 @@ function ContactSection() {
         title: 'Something went wrong',
         text: 'Please try again in a moment.',
         confirmButtonColor: '#3B1A0E',
+        customClass: { popup: 'swal-compact-popup' },
       })
     } finally {
       setIsSubmitting(false)
