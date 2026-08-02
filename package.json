@@ -15,6 +15,7 @@
     "lucide-react": "^1.27.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "sweetalert2": "^11.26.25",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
