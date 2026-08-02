@@ -70,7 +70,7 @@ function MenuHighlightsSection({
                   <img
                     src={encodeURI(item.image)}
                     alt={item.name}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover"
                     onError={() => onImageError(item.id)}
                   />
                 ) : (
