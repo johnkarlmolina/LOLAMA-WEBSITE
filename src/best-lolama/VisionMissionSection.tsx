@@ -38,26 +38,26 @@ function VisionMissionSection({ vision, mission, coreValues }: VisionMissionSect
       </div>
 
       <div className="mt-8">
-        <h3 className="text-2xl font-black text-[#3B1A0E]">Our Core Values</h3>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {coreValues.map((value) => {
-            const Icon = value.icon
+  <h3 className="text-2xl font-black text-[#3B1A0E]">Our Core Values</h3>
+  <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {coreValues.map((value) => {
+      const Icon = value.icon;
 
-            return (
-              <div
-                key={value.title}
-                className="group rounded-2xl border border-amber-100 bg-amber-50/50 p-5 transition hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-700 transition group-hover:bg-amber-200">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h4 className="mt-3 text-sm font-black text-[#3B1A0E]">{value.title}</h4>
-                <p className="mt-1 text-xs leading-6 text-[#6f4a36]">{value.description}</p>
-              </div>
-            )
-          })}
+      return (
+        <div
+          key={value.title}
+          className="group rounded-2xl border border-[#e8d9d0] bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-100/50"
+        >
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-700 transition group-hover:bg-amber-100">
+            <Icon className="h-5 w-5" />
+          </div>
+          <h4 className="mt-3 text-sm font-black text-[#3B1A0E]">{value.title}</h4>
+          <p className="mt-1 text-xs leading-6 text-[#6f4a36]">{value.description}</p>
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
     </section>
   )
 }
