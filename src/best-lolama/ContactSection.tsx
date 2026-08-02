@@ -1,23 +1,47 @@
 import emailjs from '@emailjs/browser'
 import { Mail, Phone } from 'lucide-react'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
+import Swal from 'sweetalert2'
 
-type SubmitStatus = 'success' | 'error' | null
+type ContactFormData = {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
+type ContactEmailParams = {
+  name: string
+  email: string
+  subject: string
+  message: string
+  time: string
+  reply_to: string
+}
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
+function buildContactEmailParams(formData: ContactFormData): ContactEmailParams {
+  return {
+    name: formData.name,
+    email: formData.email,
+    subject: formData.subject,
+    message: formData.message,
+    time: new Date().toLocaleString('en-PH'),
+    reply_to: formData.email,
+  }
+}
+
 function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    subject: '',
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null)
-  const [phoneError, setPhoneError] = useState('')
   const [emailError, setEmailError] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,35 +65,6 @@ function ContactSection() {
     return true
   }
 
-  const validatePhoneNumber = (phone: string) => {
-    const cleanPhone = phone.replace(/\D/g, '')
-    return /^09\d{9}$/.test(cleanPhone)
-  }
-
-  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    const formatted = value.replace(/\D/g, '')
-    setFormData((prev) => ({ ...prev, phone: formatted }))
-
-    if (formatted.length > 0) {
-      const isValid = validatePhoneNumber(formatted)
-
-      if (!isValid) {
-        if (formatted.length < 11) {
-          setPhoneError(`Need ${11 - formatted.length} more digit(s) (format: 09XXXXXXXXX)`)
-        } else if (!formatted.startsWith('09')) {
-          setPhoneError('Must start with 09 (e.g., 09161234567)')
-        } else {
-          setPhoneError('Please enter a valid 11-digit Philippine mobile number (09XXXXXXXXX)')
-        }
-      } else {
-        setPhoneError('')
-      }
-    } else {
-      setPhoneError('')
-    }
-  }
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -77,34 +72,31 @@ function ContactSection() {
       return
     }
 
-    if (formData.phone && !validatePhoneNumber(formData.phone)) {
-      setPhoneError('Please enter a valid Philippine mobile number')
-      return
-    }
-
     setIsSubmitting(true)
-    setSubmitStatus(null)
 
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone || 'Not provided',
-          message: formData.message,
-          to_email: 'molina.johnkarl.ponteras@gmail.com'
-        },  
+        buildContactEmailParams(formData),
         { publicKey: EMAILJS_PUBLIC_KEY }
       )
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', phone: '', message: '' })
-      setPhoneError('')
+      setFormData({ name: '', email: '', subject: '', message: '' })
       setEmailError('')
+      await Swal.fire({
+        icon: 'success',
+        title: 'Message sent!',
+        text: 'Thanks for reaching out — our team will get back to you soon.',
+        confirmButtonColor: '#3B1A0E',
+      })
     } catch (error) {
       console.error('Failed to send message:', error)
-      setSubmitStatus('error')
+      await Swal.fire({
+        icon: 'error',
+        title: 'Something went wrong',
+        text: 'Please try again in a moment.',
+        confirmButtonColor: '#3B1A0E',
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -222,26 +214,19 @@ function ContactSection() {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-semibold text-[#3B1A0E]">
-                Phone Number <span className="text-xs font-normal text-amber-700">(Optional)</span>
+              <label htmlFor="subject" className="block text-sm font-semibold text-[#3B1A0E]">
+                Subject <span className="text-red-500">*</span>
               </label>
               <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                maxLength={11}
-                className={`mt-1 w-full rounded-xl border px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:outline-none focus:ring-2 transition-all duration-200 ${
-                  phoneError
-                    ? 'border-red-400 bg-red-50/50 focus:border-red-500 focus:ring-red-200/70'
-                    : 'border-amber-100 bg-white focus:border-amber-500 focus:ring-amber-200/70'
-                }`}
-                placeholder="09161234567"
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full rounded-xl border border-amber-100 bg-white px-4 py-3 text-sm text-[#3B1A0E] placeholder:text-[#6e3d25]/50 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200/70"
+                placeholder="What's this about?"
               />
-
-              {phoneError && <p className="mt-1 text-xs text-red-600">{phoneError}</p>}
-              <p className="mt-1 text-xs text-[#6e3d25]/70">Must be 11 digits starting with 09 (e.g., 09161234567)</p>
             </div>
 
             <div>
@@ -262,7 +247,7 @@ function ContactSection() {
 
             <button
               type="submit"
-              disabled={isSubmitting || !!phoneError || !!emailError}
+              disabled={isSubmitting || !!emailError}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#3B1A0E] px-6 py-3.5 font-semibold text-white transition hover:bg-[#5b2d18] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSubmitting ? (
@@ -277,20 +262,6 @@ function ContactSection() {
                 'Send Message'
               )}
             </button>
-
-            {submitStatus === 'success' && (
-              <div className="flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700">
-                <span className="text-lg">✓</span>
-                <p className="text-sm font-medium">Your message has been sent successfully!</p>
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700">
-                <span className="text-lg">✗</span>
-                <p className="text-sm font-medium">Something went wrong. Please try again.</p>
-              </div>
-            )}
           </form>
         </div>
       </div>
