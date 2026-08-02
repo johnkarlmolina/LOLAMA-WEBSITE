@@ -7,6 +7,7 @@ type MenuPageProps = {
   onGoAbout: () => void
   onGoFranchise: () => void
   onGoContact: () => void
+  onGoRecognitionAwards: () => void
   onBackHome: () => void
 }
 
@@ -54,7 +55,7 @@ function MenuListItem({ item }: { item: CatalogMenuItem }) {
   )
 }
 
-function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPageProps) {
+function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards, onBackHome }: MenuPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -94,6 +95,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onBackHome }: MenuPag
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', current: true },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />

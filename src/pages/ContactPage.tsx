@@ -8,9 +8,10 @@ type ContactPageProps = {
   onGoMenu: () => void
   onGoAbout: () => void
   onGoFranchise: () => void
+  onGoRecognitionAwards: () => void
 }
 
-function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise }: ContactPageProps) {
+function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise, onGoRecognitionAwards }: ContactPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -24,6 +25,7 @@ function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise }: ContactPa
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', current: true },
         ] satisfies readonly HeaderNavItem[]}
       />
@@ -50,6 +52,7 @@ function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise }: ContactPa
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
+          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', current: true },
         ] satisfies readonly HeaderNavItem[]}
       />

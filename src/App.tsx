@@ -4,8 +4,9 @@ import BestLolamaLandingPage from './pages/BestLolamaLandingPage'
 import ContactPage from './pages/ContactPage'
 import FranchisePage from './pages/FranchisePage'
 import MenuPage from './pages/MenuPage'
+import RecognitionAwardsPage from './pages/RecognitionAwardsPage'
 
-type Page = 'home' | 'menu' | 'about' | 'franchise' | 'contact'
+type Page = 'home' | 'menu' | 'about' | 'franchise' | 'contact' | 'recognition-awards'
 
 function App() {
   const [page, setPage] = useState<Page>('home')
@@ -19,21 +20,66 @@ function App() {
   const goAbout = () => setPage('about')
   const goFranchise = () => setPage('franchise')
   const goContact = () => setPage('contact')
+  const goRecognitionAwards = () => setPage('recognition-awards')
 
   if (page === 'menu') {
-    return <MenuPage onGoAbout={goAbout} onGoFranchise={goFranchise} onGoContact={goContact} onBackHome={goHome} />
+    return (
+      <MenuPage
+        onGoAbout={goAbout}
+        onGoFranchise={goFranchise}
+        onGoContact={goContact}
+        onGoRecognitionAwards={goRecognitionAwards}
+        onBackHome={goHome}
+      />
+    )
   }
 
   if (page === 'about') {
-    return <AboutPage onGoHome={goHome} onGoMenu={goMenu} onGoFranchise={goFranchise} onGoContact={goContact} />
+    return (
+      <AboutPage
+        onGoHome={goHome}
+        onGoMenu={goMenu}
+        onGoFranchise={goFranchise}
+        onGoContact={goContact}
+        onGoRecognitionAwards={goRecognitionAwards}
+      />
+    )
   }
 
   if (page === 'franchise') {
-    return <FranchisePage onGoHome={goHome} onGoMenu={goMenu} onGoAbout={goAbout} onGoContact={goContact} />
+    return (
+      <FranchisePage
+        onGoHome={goHome}
+        onGoMenu={goMenu}
+        onGoAbout={goAbout}
+        onGoContact={goContact}
+        onGoRecognitionAwards={goRecognitionAwards}
+      />
+    )
   }
 
   if (page === 'contact') {
-    return <ContactPage onGoHome={goHome} onGoMenu={goMenu} onGoAbout={goAbout} onGoFranchise={goFranchise} />
+    return (
+      <ContactPage
+        onGoHome={goHome}
+        onGoMenu={goMenu}
+        onGoAbout={goAbout}
+        onGoFranchise={goFranchise}
+        onGoRecognitionAwards={goRecognitionAwards}
+      />
+    )
+  }
+
+  if (page === 'recognition-awards') {
+    return (
+      <RecognitionAwardsPage
+        onGoHome={goHome}
+        onGoMenu={goMenu}
+        onGoAbout={goAbout}
+        onGoFranchise={goFranchise}
+        onGoContact={goContact}
+      />
+    )
   }
 
   return (
@@ -42,6 +88,7 @@ function App() {
       onGoAbout={goAbout}
       onGoFranchise={goFranchise}
       onGoContact={goContact}
+      onGoRecognitionAwards={goRecognitionAwards}
       onOpenMenuPage={goMenu}
     />
   )
