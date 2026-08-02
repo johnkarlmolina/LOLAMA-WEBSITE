@@ -8,6 +8,7 @@ type RecognitionAwardsPageProps = {
   onGoAbout: () => void
   onGoFranchise: () => void
   onGoContact: () => void
+  onFranchiseNowClick: () => void
 }
 
 function RecognitionAwardsPage({
@@ -16,6 +17,7 @@ function RecognitionAwardsPage({
   onGoAbout,
   onGoFranchise,
   onGoContact,
+  onFranchiseNowClick,
 }: RecognitionAwardsPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigationItems = [
@@ -33,6 +35,7 @@ function RecognitionAwardsPage({
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onGoHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={navigationItems}
       />
 

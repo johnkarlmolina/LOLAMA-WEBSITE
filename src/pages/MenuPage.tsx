@@ -1,4 +1,4 @@
-import { PackageSearch, Search } from 'lucide-react'
+import { PackageSearch, Search, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import Header, { type HeaderNavItem } from '../best-lolama/Header'
 import { MENU_CATALOG_ITEMS, type CatalogMenuItem } from '../data/best-lolama.catalog.data'
@@ -8,6 +8,7 @@ type MenuPageProps = {
   onGoFranchise: () => void
   onGoContact: () => void
   onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
   onBackHome: () => void
 }
 
@@ -34,30 +35,35 @@ function slugify(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 }
 
-function MenuListItem({ item }: { item: CatalogMenuItem }) {
+function MenuListItem({ item, onImageClick }: { item: CatalogMenuItem; onImageClick: (item: CatalogMenuItem) => void }) {
   return (
-    <div className="flex items-center gap-5">
-      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border border-amber-100 bg-amber-50">
+    <div className="flex items-center gap-4 sm:gap-5">
+      <button
+        type="button"
+        onClick={() => onImageClick(item)}
+        className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-amber-100 bg-amber-50 transition-transform duration-500 ease-out hover:scale-110 sm:h-24 sm:w-24"
+      >
         <img src={encodeURI(item.image)} alt={item.name} className="h-full w-full object-cover" />
-      </div>
-      <div className="min-w-0">
-        <div className="flex items-center gap-2">
-          <p className="text-lg font-bold text-[#3B1A0E]">{item.name}</p>
+      </button>
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <p className="break-words text-base font-bold text-[#3B1A0E] sm:text-lg">{item.name}</p>
           {item.tag ? (
-            <span className="shrink-0 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-amber-800">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-amber-800">
               {item.tag}
             </span>
           ) : null}
         </div>
-        <p className="truncate text-sm text-[#7a513c]">{item.description}</p>
+        <p className="line-clamp-2 text-sm text-[#7a513c]">{item.description}</p>
       </div>
     </div>
   )
 }
 
-function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards, onBackHome }: MenuPageProps) {
+function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards, onFranchiseNowClick, onBackHome }: MenuPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [previewItem, setPreviewItem] = useState<CatalogMenuItem | null>(null)
 
   const normalizedQuery = searchQuery.trim().toLowerCase()
 
@@ -91,6 +97,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onBackHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', current: true },
@@ -167,7 +174,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
                   ) : (
                     <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
                       {searchResults.map((item) => (
-                        <MenuListItem key={item.id} item={item} />
+                        <MenuListItem key={item.id} item={item} onImageClick={setPreviewItem} />
                       ))}
                     </div>
                   )}
@@ -193,7 +200,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
                             </h3>
                             <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
                               {items.map((item) => (
-                                <MenuListItem key={item.id} item={item} />
+                                <MenuListItem key={item.id} item={item} onImageClick={setPreviewItem} />
                               ))}
                             </div>
                           </div>
@@ -224,6 +231,43 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
           </div>
         </section>
       </div>
+
+      {previewItem ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setPreviewItem(null)}
+        >
+          <div
+            className="relative max-h-[85vh] w-full max-w-xs overflow-y-auto rounded-3xl bg-white shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setPreviewItem(null)}
+              className="absolute right-3 top-3 rounded-full bg-white/90 p-2 text-[#3B1A0E] shadow-lg transition hover:bg-white"
+              aria-label="Close preview"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <img
+              src={encodeURI(previewItem.image)}
+              alt={previewItem.name}
+              className="h-48 w-full bg-amber-50 object-contain"
+            />
+            <div className="space-y-2 p-4">
+              <div className="flex items-center gap-2">
+                <p className="text-lg font-black text-[#3B1A0E]">{previewItem.name}</p>
+                {previewItem.tag ? (
+                  <span className="shrink-0 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-amber-800">
+                    {previewItem.tag}
+                  </span>
+                ) : null}
+              </div>
+              <p className="text-sm leading-7 text-[#7a513c]">{previewItem.description}</p>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }

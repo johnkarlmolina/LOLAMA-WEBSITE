@@ -54,9 +54,9 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
   },
   {
     id: 4,
-    name: 'Image 8183',
+    name: 'Chocolate Oreo',
     category: 'Starter Box',
-    description: 'Fresh doughnut variant from the starter line.',
+    description: 'Chocolate glaze topped with crushed Oreo cookie crumbs.',
     image: '/Images/STARTER BOX/IMG_8183.jpeg',
   },
   {

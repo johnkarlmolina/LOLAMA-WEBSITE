@@ -15,6 +15,7 @@ type BestLolamaLandingPageProps = {
   onGoFranchise: () => void
   onGoContact: () => void
   onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
   onOpenMenuPage: () => void
 }
 
@@ -24,16 +25,11 @@ function BestLolamaLandingPage({
   onGoFranchise,
   onGoContact,
   onGoRecognitionAwards,
+  onFranchiseNowClick,
   onOpenMenuPage,
 }: BestLolamaLandingPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState<string>('All')
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({})
-
-  const filteredItems =
-    activeCategory === 'All'
-      ? MENU_ITEMS
-      : MENU_ITEMS.filter((item) => item.category === activeCategory)
 
   const handleImageError = (itemId: number) => {
     setImageErrors((current) => (current[itemId] ? current : { ...current, [itemId]: true }))
@@ -46,6 +42,7 @@ function BestLolamaLandingPage({
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onOpenMenuPage, current: false },
@@ -60,20 +57,8 @@ function BestLolamaLandingPage({
         <PartnerMarqueeSection partners={PARTNERS} />
         <AboutSection valuePoints={VALUE_POINTS} />
         <MenuHighlightsSection
-          activeCategory={activeCategory}
-          categories={[
-            'All',
-            'Royal Box',
-            'Classic Cheese',
-            'Dubai Collection',
-            'Premium Box',
-            'Starter Box',
-            'Munkchin Bites',
-            'Sari-Sari Box',
-          ]}
-          filteredItems={filteredItems}
+          filteredItems={MENU_ITEMS}
           imageErrors={imageErrors}
-          onCategoryChange={setActiveCategory}
           onImageError={handleImageError}
           onOpenMenuPage={onOpenMenuPage}
         />

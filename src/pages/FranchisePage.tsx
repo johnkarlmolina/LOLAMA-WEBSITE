@@ -10,9 +10,17 @@ type FranchisePageProps = {
   onGoAbout: () => void
   onGoContact: () => void
   onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
 }
 
-function FranchisePage({ onGoHome, onGoMenu, onGoAbout, onGoContact, onGoRecognitionAwards }: FranchisePageProps) {
+function FranchisePage({
+  onGoHome,
+  onGoMenu,
+  onGoAbout,
+  onGoContact,
+  onGoRecognitionAwards,
+  onFranchiseNowClick,
+}: FranchisePageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigationItems = [
     { label: 'About Us', onClick: onGoAbout },
@@ -29,6 +37,7 @@ function FranchisePage({ onGoHome, onGoMenu, onGoAbout, onGoContact, onGoRecogni
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onGoHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={navigationItems}
       />
 

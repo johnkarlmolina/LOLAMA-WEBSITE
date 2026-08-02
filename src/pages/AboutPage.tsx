@@ -19,9 +19,17 @@ type AboutPageProps = {
   onGoFranchise: () => void
   onGoContact: () => void
   onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
 }
 
-function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact, onGoRecognitionAwards }: AboutPageProps) {
+function AboutPage({
+  onGoHome,
+  onGoMenu,
+  onGoFranchise,
+  onGoContact,
+  onGoRecognitionAwards,
+  onFranchiseNowClick,
+}: AboutPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -31,6 +39,7 @@ function AboutPage({ onGoHome, onGoMenu, onGoFranchise, onGoContact, onGoRecogni
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onGoHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', current: true },
           { label: 'Menu', onClick: onGoMenu },

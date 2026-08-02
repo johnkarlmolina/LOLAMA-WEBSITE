@@ -9,9 +9,17 @@ type ContactPageProps = {
   onGoAbout: () => void
   onGoFranchise: () => void
   onGoRecognitionAwards: () => void
+  onFranchiseNowClick: () => void
 }
 
-function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise, onGoRecognitionAwards }: ContactPageProps) {
+function ContactPage({
+  onGoHome,
+  onGoMenu,
+  onGoAbout,
+  onGoFranchise,
+  onGoRecognitionAwards,
+  onFranchiseNowClick,
+}: ContactPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -21,6 +29,7 @@ function ContactPage({ onGoHome, onGoMenu, onGoAbout, onGoFranchise, onGoRecogni
         onToggleMenu={() => setMobileMenuOpen((current) => !current)}
         onCloseMenu={() => setMobileMenuOpen(false)}
         onLogoClick={onGoHome}
+        onFranchiseNowClick={onFranchiseNowClick}
         navItems={[
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
