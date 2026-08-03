@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Footer from '../best-lolama/Footer'
+import FranchiseRequirementsSection from '../best-lolama/FranchiseRequirementsSection'
 import FranchiseSection from '../best-lolama/FranchiseSection'
 import Header, { type HeaderNavItem } from '../best-lolama/Header'
-import { FRANCHISE_STEPS, FRANCHISE_TIERS } from '../data/best-lolama.data'
+import { FRANCHISE_REQUIREMENTS, FRANCHISE_STEPS, FRANCHISE_TIERS } from '../data/best-lolama.data'
 
 type FranchisePageProps = {
   onGoHome: () => void
@@ -52,6 +53,10 @@ function FranchisePage({
             equity, and support that can scale with location and territory.
           </p>
         </section>
+
+        <div className="mt-10">
+          <FranchiseRequirementsSection requirements={FRANCHISE_REQUIREMENTS} />
+        </div>
 
         <div className="mt-10">
           <FranchiseSection franchiseTiers={FRANCHISE_TIERS} franchiseSteps={FRANCHISE_STEPS} />
