@@ -235,3 +235,19 @@ export const FRANCHISE_STEPS = [
   'Soft Opening',
   'Grand Opening & Ongoing Support',
 ]
+
+export const FRANCHISE_REQUIREMENTS = [
+  {
+    title: 'Letter of Intent',
+    description:
+      'Submit a formal letter expressing your genuine interest in becoming a franchise owner. Include your business background, financial capacity, and reasons for choosing our brand.',
+  },
+  {
+    title: 'Accomplished Confidential Form',
+    description: 'Complete our comprehensive application form.',
+  },
+  {
+    title: 'Target Location',
+    description: 'Provide detailed information about your proposed location.',
+  },
+]
