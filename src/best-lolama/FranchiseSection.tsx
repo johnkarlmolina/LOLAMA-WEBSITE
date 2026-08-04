@@ -104,11 +104,11 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
   </div>
 
   {/* Steps appear one by one as the section scrolls into view */}
-  <div ref={stepsRef} className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+  <div ref={stepsRef} className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {franchiseSteps.map((step, index) => (
       <div
         key={step}
-        className="rounded-2xl border border-amber-100 bg-white p-6 shadow-sm transition duration-500 hover:shadow-md"
+        className="rounded-2xl border border-amber-100 bg-white p-4 shadow-sm transition duration-500 hover:shadow-md sm:p-6"
         style={{
           opacity: areStepsVisible ? 1 : 0,
           transform: areStepsVisible ? 'translateY(0)' : 'translateY(16px)',
@@ -116,13 +116,13 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
           transitionDelay: `${index * 120}ms`,
         }}
       >
-        <div className="flex items-center justify-between border-b border-amber-100/60 pb-4">
+        <div className="flex items-center justify-between border-b border-amber-100/60 pb-3 sm:pb-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Step</span>
-          <span className="text-2xl font-black text-amber-600">
+          <span className="text-xl font-black text-amber-600 sm:text-2xl">
             {String(index + 1).padStart(2, '0')}
           </span>
         </div>
-        <h3 className="mt-4 text-base font-bold leading-relaxed text-[#3B1A0E]">
+        <h3 className="mt-3 text-sm font-bold leading-relaxed text-[#3B1A0E] sm:mt-4 sm:text-base">
           {step}
         </h3>
       </div>
