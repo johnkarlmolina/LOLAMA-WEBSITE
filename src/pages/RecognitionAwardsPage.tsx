@@ -28,6 +28,22 @@ function RecognitionAwardsPage({
     { label: 'Contact Us', onClick: onGoContact },
   ] satisfies readonly HeaderNavItem[]
 
+  // Helper function to open modal
+  const openModal = (modalId: string) => {
+    const dialog = document.getElementById(modalId) as HTMLDialogElement;
+    if (dialog) {
+      dialog.showModal();
+    }
+  };
+
+  // Helper function to close modal
+  const closeModal = (modalId: string) => {
+    const dialog = document.getElementById(modalId) as HTMLDialogElement;
+    if (dialog) {
+      dialog.close();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#fff9ef_0%,#fffdf9_40%,#fff6e8_100%)] text-[#3B1A0E]">
       <Header
@@ -152,14 +168,18 @@ function RecognitionAwardsPage({
             </div>
           </div>
         </section>
-           {/* Awards & Recognition Section */}
+          
+        {/* Awards & Recognition Section */}
         <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
           <h3 className="mb-6 text-center text-2xl font-bold text-[#6e3d25] md:text-3xl">
             Awards &amp; Recognition
           </h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {/* Award 1 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-award1')}
+            >
               <img
                 src="/Images/AWARDS & RECOGNITION/awards&recognition1.jpg"
                 alt="Best Lolama Award"
@@ -167,13 +187,16 @@ function RecognitionAwardsPage({
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="px-2 text-center text-sm font-semibold text-white">
-                  Award Title Here
+                  Award
                 </p>
               </div>
             </div>
 
             {/* Award 2 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-award2')}
+            >
               <img
                 src="/Images/AWARDS & RECOGNITION/BEST FRESHLY BAKED DONUTS AWARD.jpg"
                 alt="Best Lolama Recognition"
@@ -181,13 +204,16 @@ function RecognitionAwardsPage({
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="px-2 text-center text-sm font-semibold text-white">
-                  Best Freshly Baked Special Dougnuts
+                  Best Freshly Baked Special Doughnuts
                 </p>
               </div>
             </div>
 
             {/* Award 3 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-award3')}
+            >
               <img
                 src="/Images/AWARDS & RECOGNITION/asia magazine award.jpg"
                 alt="Best Lolama Certificate"
@@ -201,29 +227,52 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Award 4 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-award4')}
+            >
               <img
-                src="/images/awards/award-4.jpg"
-                alt="Best Lolama Plaque"
+                src="/Images/AWARDS & RECOGNITION/2NDFIFAGENERALMEMBERSHIP2024.png"
+                alt="2nd General Membership Convention 2024"
                 className="h-48 w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="px-2 text-center text-sm font-semibold text-white">
-                  Plaque Title Here
+                  2nd FIFA General Membership Convention 2024
+                </p>
+              </div>
+            </div>
+
+            {/* Award 5 - Certificate of Membership */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-award5')}
+            >
+              <img
+                src="/Images/AWARDS & RECOGNITION/CERTIFICATEOFMEMBERSHIP.png"
+                alt="Certificate of Membership FIFA"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="px-2 text-center text-sm font-semibold text-white">
+                  Certificate of Membership FIFA
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Vloggers & Influencers Section */}
+        {/* Media Features Section */}
         <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
           <h3 className="mb-6 text-center text-2xl font-bold text-[#6e3d25] md:text-3xl">
             Media Features
           </h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {/* Influencer 1 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media1')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/Newspaper.png"
                 alt="Vlogger Name"
@@ -231,14 +280,17 @@ function RecognitionAwardsPage({
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="px-2 text-center">
-                  <p className="text-sm font-semibold text-white">Features in </p>
-                  <p className="text-xs text-gray-300">News paper</p>
+                  <p className="text-sm font-semibold text-white">Features in</p>
+                  <p className="text-xs text-gray-300">Newspaper</p>
                 </div>
               </div>
             </div>
 
             {/* Influencer 2 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media2')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/Featured in a Magazine.png"
                 alt="Influencer Name"
@@ -253,7 +305,10 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Influencer 3 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media3')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/junnie boy.png"
                 alt="Content Creator"
@@ -268,7 +323,10 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Influencer 4 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media4')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/vien iligan-velasquez.png"
                 alt="Food Critic"
@@ -283,7 +341,10 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Influencer 5 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media5')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/pat velazquez-gaspar.png"
                 alt="TikTok Creator"
@@ -298,7 +359,10 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Influencer 6 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media6')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/boss toyo.png"
                 alt="YouTube Vlogger"
@@ -313,7 +377,10 @@ function RecognitionAwardsPage({
             </div>
 
             {/* Influencer 7 */}
-            <div className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media7')}
+            >
               <img
                 src="/Images/MEDIA FEATURES/antonette and whamos cruz.jpg"
                 alt="YouTube Vlogger"
@@ -327,9 +394,607 @@ function RecognitionAwardsPage({
               </div>
             </div>
 
+            {/* Influencer 8 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media8')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/AVIONASTARTOROFAMILY.png"
+                alt="Media Feature 8"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">Aviona Star Toro Family</p>
+                  <p className="text-xs text-gray-300">Vlogger</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 9 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media9')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/KARLAESTRADA.png"
+                alt="Media Feature 9"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">Karla Estrada</p>
+                  <p className="text-xs text-gray-300">Actress and Television Host</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 10 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media10')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/RDRTALKS.png"
+                alt="Media Feature 10"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">Boss RDR (Reymond delos Reyes)</p>
+                  <p className="text-xs text-gray-300">Filipino Brand Accelerator, business coach, and entrepreneur</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 11 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media11')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/SMNI NEWS DZAR.png"
+                alt="Media Feature 11"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">SMNI News DZAR</p>
+                  <p className="text-xs text-gray-300">AM radio station in Metro Manila operated under Swara Sug Media Corporation, the parent company of SMNI News Channel</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 12 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media12')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/DWIZNEWSTV.png"
+                alt="Media Feature 12"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">DWIZ News Tv</p>
+                  <p className="text-xs text-gray-300">DWIZ News TV is a digital television news and public affairs channel broadcasting on Channel 23</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 13 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media13')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/ALIWCHANNEL23.png"
+                alt="Media Feature 13"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">Aliw Channel 23</p>
+                  <p className="text-xs text-gray-300">The network broadcasts on UHF Channel 23 via digital terrestrial television in Metro Manila.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 14 */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media14')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/FACETOFACETV5.png"
+                alt="Media Feature 14"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">Face to Face Tv 5</p>
+                  <p className="text-xs text-gray-300">Philippine tabloid talk show featuring heated in-person confrontations, community dispute resolutions, and practical lifestyle advice</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Influencer 15 - NEW SLOT */}
+            <div 
+              className="group relative overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal('modal-media15')}
+            >
+              <img
+                src="/Images/MEDIA FEATURES/china roces.png"
+                alt="Media Feature 15"
+                className="h-48 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="px-2 text-center">
+                  <p className="text-sm font-semibold text-white">China Roces</p>
+                  <p className="text-xs text-gray-300">Actress and Model</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
+
+      {/* ====== MODALS FOR AWARDS ====== */}
+      {/* Modal Award 1 */}
+      <dialog id="modal-award1" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-award1')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/AWARDS & RECOGNITION/awards&recognition1.jpg"
+              alt="Award 1"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Award</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Award 2 */}
+      <dialog id="modal-award2" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-award2')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/AWARDS & RECOGNITION/BEST FRESHLY BAKED DONUTS AWARD.jpg"
+              alt="Best Freshly Baked Special Doughnuts"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Best Freshly Baked Special Doughnuts</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Award 3 */}
+      <dialog id="modal-award3" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-award3')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/AWARDS & RECOGNITION/asia magazine award.jpg"
+              alt="Asia Magazine Award"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Asia Magazine Award</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Award 4 */}
+      <dialog id="modal-award4" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-award4')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/AWARDS & RECOGNITION/2NDFIFAGENERALMEMBERSHIP2024.png"
+              alt="2nd General Membership Convention 2024"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">2nd General Membership Convention 2024</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Award 5 - Certificate of Membership */}
+      <dialog id="modal-award5" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-award5')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/AWARDS & RECOGNITION/CERTIFICATEOFMEMBERSHIP.png"
+              alt="Certificate of Membership FIFA"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Certificate of Membership FIFA</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* ====== MODALS FOR MEDIA FEATURES ====== */}
+      {/* Modal Media 1 */}
+      <dialog id="modal-media1" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media1')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/Newspaper.png"
+              alt="Newspaper Feature"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Features in Newspaper</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 2 */}
+      <dialog id="modal-media2" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media2')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/Featured in a Magazine.png"
+              alt="Magazine Feature"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Features in a Magazine</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 3 */}
+      <dialog id="modal-media3" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media3')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/junnie boy.png"
+              alt="Junnie Boy"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Junnie Boy (Marlon Velasquez)</p>
+              <p className="text-sm text-gray-300">Content Creator</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 4 */}
+      <dialog id="modal-media4" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media4')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/vien iligan-velasquez.png"
+              alt="Vien Iligan-Velasquez"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Vien Iligan-Velasquez</p>
+              <p className="text-sm text-gray-300">Content Creator</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 5 */}
+      <dialog id="modal-media5" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media5')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/pat velazquez-gaspar.png"
+              alt="Pat Velasquez-Gaspar"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Pat Velasquez-Gaspar (Neneng Lamig)</p>
+              <p className="text-sm text-gray-300">Content Creator</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 6 */}
+      <dialog id="modal-media6" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media6')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/boss toyo.png"
+              alt="Boss Toyo"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Boss Toyo</p>
+              <p className="text-sm text-gray-300">Filipino Collector and Vlogger</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 7 */}
+      <dialog id="modal-media7" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media7')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/antonette and whamos cruz.jpg"
+              alt="Antonette Gail and Whamos Cruz"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Antonette Gail and Whamos Cruz</p>
+              <p className="text-sm text-gray-300">Content Creator</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 8 */}
+      <dialog id="modal-media8" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media8')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/AVIONASTARTOROFAMILY.png"
+              alt="Media Feature 8"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Aviona Star Toro Family</p>
+              <p className="text-sm text-gray-300">Vlogger</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 9 */}
+      <dialog id="modal-media9" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media9')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/KARLAESTRADA.png"
+              alt="Media Feature 9"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Karla Estrada</p>
+              <p className="text-sm text-gray-300">Actress and Television Host</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 10 */}
+      <dialog id="modal-media10" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media10')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/RDRTALKS.png"
+              alt="Media Feature 10"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Boss RDR (Reymond delos Reyes)</p>
+              <p className="text-sm text-gray-300">Filipino Brand Accelerator, business coach, and entrepreneur</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 11 */}
+      <dialog id="modal-media11" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media11')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/SMNI NEWS DZAR.png"
+              alt="Media Feature 11"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">SMNI News DZAR</p>
+              <p className="text-sm text-gray-300">AM radio station in Metro Manila operated under Swara Sug Media Corporation, the parent company of SMNI News Channel</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 12 */}
+      <dialog id="modal-media12" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media12')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/DWIZNEWSTV.png"
+              alt="Media Feature 12"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">DWIZ News Tv</p>
+              <p className="text-sm text-gray-300">DWIZ News TV is a digital television news and public affairs channel broadcasting on Channel 23</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 13 */}
+      <dialog id="modal-media13" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media13')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/ALIWCHANNEL23.png"
+              alt="Media Feature 13"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Aliw Channel 23</p>
+              <p className="text-sm text-gray-300">The network broadcasts on UHF Channel 23 via digital terrestrial television in Metro Manila.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 14 */}
+      <dialog id="modal-media14" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media14')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/FACETOFACETV5.png"
+              alt="Media Feature 14"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">Face to Face Tv 5</p>
+              <p className="text-sm text-gray-300">Philippine tabloid talk show featuring heated in-person confrontations, community dispute resolutions, and practical lifestyle advice</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Modal Media 15 */}
+      <dialog id="modal-media15" className="modal rounded-2xl backdrop:bg-black/70">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center min-h-[40vh] max-h-[90vh]">
+            <button 
+              className="absolute right-3 top-3 z-20 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={() => closeModal('modal-media15')}
+            >
+              ✕
+            </button>
+            <img
+              src="/Images/MEDIA FEATURES/china roces.png"
+              alt="Media Feature 15"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+              <p className="text-xl font-semibold text-white">China Roces</p>
+              <p className="text-sm text-gray-300">Actress and Model</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
 
       <Footer navItems={navigationItems} />
     </div>
