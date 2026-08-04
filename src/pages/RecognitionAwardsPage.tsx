@@ -557,7 +557,7 @@ function RecognitionAwardsPage({
               alt="Award 1"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Award</p>
             </div>
           </div>
@@ -579,7 +579,7 @@ function RecognitionAwardsPage({
               alt="Best Freshly Baked Special Doughnuts"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Best Freshly Baked Special Doughnuts</p>
             </div>
           </div>
@@ -601,7 +601,7 @@ function RecognitionAwardsPage({
               alt="Asia Magazine Award"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Asia Magazine Award</p>
             </div>
           </div>
@@ -623,7 +623,7 @@ function RecognitionAwardsPage({
               alt="2nd General Membership Convention 2024"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">2nd General Membership Convention 2024</p>
             </div>
           </div>
@@ -645,7 +645,7 @@ function RecognitionAwardsPage({
               alt="Certificate of Membership FIFA"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Certificate of Membership FIFA</p>
             </div>
           </div>
@@ -668,7 +668,7 @@ function RecognitionAwardsPage({
               alt="Newspaper Feature"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Features in Newspaper</p>
             </div>
           </div>
@@ -690,7 +690,7 @@ function RecognitionAwardsPage({
               alt="Magazine Feature"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Features in a Magazine</p>
             </div>
           </div>
@@ -712,7 +712,7 @@ function RecognitionAwardsPage({
               alt="Junnie Boy"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Junnie Boy (Marlon Velasquez)</p>
               <p className="text-sm text-gray-300">Content Creator</p>
             </div>
@@ -735,7 +735,7 @@ function RecognitionAwardsPage({
               alt="Vien Iligan-Velasquez"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Vien Iligan-Velasquez</p>
               <p className="text-sm text-gray-300">Content Creator</p>
             </div>
@@ -758,7 +758,7 @@ function RecognitionAwardsPage({
               alt="Pat Velasquez-Gaspar"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Pat Velasquez-Gaspar (Neneng Lamig)</p>
               <p className="text-sm text-gray-300">Content Creator</p>
             </div>
@@ -781,7 +781,7 @@ function RecognitionAwardsPage({
               alt="Boss Toyo"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Boss Toyo</p>
               <p className="text-sm text-gray-300">Filipino Collector and Vlogger</p>
             </div>
@@ -804,7 +804,7 @@ function RecognitionAwardsPage({
               alt="Antonette Gail and Whamos Cruz"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Antonette Gail and Whamos Cruz</p>
               <p className="text-sm text-gray-300">Content Creator</p>
             </div>
@@ -827,7 +827,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 8"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Aviona Star Toro Family</p>
               <p className="text-sm text-gray-300">Vlogger</p>
             </div>
@@ -850,7 +850,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 9"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Karla Estrada</p>
               <p className="text-sm text-gray-300">Actress and Television Host</p>
             </div>
@@ -873,7 +873,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 10"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Boss RDR (Reymond delos Reyes)</p>
               <p className="text-sm text-gray-300">Filipino Brand Accelerator, business coach, and entrepreneur</p>
             </div>
@@ -896,7 +896,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 11"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">SMNI News DZAR</p>
               <p className="text-sm text-gray-300">AM radio station in Metro Manila operated under Swara Sug Media Corporation, the parent company of SMNI News Channel</p>
             </div>
@@ -919,7 +919,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 12"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">DWIZ News Tv</p>
               <p className="text-sm text-gray-300">DWIZ News TV is a digital television news and public affairs channel broadcasting on Channel 23</p>
             </div>
@@ -942,7 +942,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 13"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Aliw Channel 23</p>
               <p className="text-sm text-gray-300">The network broadcasts on UHF Channel 23 via digital terrestrial television in Metro Manila.</p>
             </div>
@@ -965,7 +965,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 14"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">Face to Face Tv 5</p>
               <p className="text-sm text-gray-300">Philippine tabloid talk show featuring heated in-person confrontations, community dispute resolutions, and practical lifestyle advice</p>
             </div>
@@ -988,7 +988,7 @@ function RecognitionAwardsPage({
               alt="Media Feature 15"
               className="w-full h-auto max-h-[85vh] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-xl font-semibold text-white">China Roces</p>
               <p className="text-sm text-gray-300">Actress and Model</p>
             </div>

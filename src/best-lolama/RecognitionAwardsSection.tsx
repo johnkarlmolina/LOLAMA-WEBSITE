@@ -11,15 +11,32 @@ const FEATURED_ON = [
 ] as const
 
 const AWARD_HIGHLIGHTS = [
-  { src: '/Images/AWARDS & RECOGNITION/BEST FRESHLY BAKED DONUTS AWARD.jpg', alt: 'Best Freshly Baked Special Doughnuts award' },
-  { src: '/Images/AWARDS & RECOGNITION/asia magazine award.jpg', alt: 'Asia Magazine award' },
-  { src: '/Images/AWARDS & RECOGNITION/awards&recognition1.jpg', alt: 'Best Lolama award' },
+  {
+    src: '/Images/MEDIA FEATURES/RDRTALKS.png',
+    alt: 'RDR Talks feature',
+    label: 'RDR Talks',
+  },
+  {
+    src: '/Images/MEDIA FEATURES/DWIZNEWSTV.png',
+    alt: 'DWIZ 882 feature',
+    label: 'DWIZ 882',
+  },
+  {
+    src: '/Images/AWARDS & RECOGNITION/BEST FRESHLY BAKED DONUTS AWARD.jpg',
+    alt: 'Best Freshly Baked Special Doughnuts award',
+    label: 'Best Freshly Baked Special Doughnuts',
+  },
+  {
+    src: '/Images/AWARDS & RECOGNITION/asia magazine award.jpg',
+    alt: 'Asia Magazine award',
+    label: 'Asia Magazine Award',
+  },
 ] as const
 
 function RecognitionAwardsSection({ onGoRecognitionAwards }: RecognitionAwardsSectionProps) {
   return (
     <section id="recognition-awards" className="scroll-mt-28 py-12 sm:py-16">
-      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+      <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         {/* LEFT SIDE */}
         <div className="space-y-5">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-amber-700">Recognition &amp; awards</p>
@@ -66,15 +83,20 @@ function RecognitionAwardsSection({ onGoRecognitionAwards }: RecognitionAwardsSe
         </div>
 
         {/* RIGHT SIDE - Award highlights */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2">
-          {AWARD_HIGHLIGHTS.map((award) => (
-            <div
-              key={award.src}
-              className="overflow-hidden rounded-2xl border border-amber-100 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <img src={encodeURI(award.src)} alt={award.alt} className="h-40 w-full object-cover sm:h-48" />
-            </div>
-          ))}
+        <div className="rounded-4xl border border-amber-100 bg-white p-3 shadow-sm">
+          <div className="grid grid-cols-2 gap-3">
+            {AWARD_HIGHLIGHTS.map((award) => (
+              <div
+                key={award.src}
+                className="group relative h-40 overflow-hidden rounded-2xl bg-amber-50 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:h-48"
+              >
+                <img src={encodeURI(award.src)} alt={award.alt} className="h-full w-full object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="px-2 text-center text-sm font-semibold text-white">{award.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
