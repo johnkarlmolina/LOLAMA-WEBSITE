@@ -7,6 +7,7 @@ import Header, { type HeaderNavItem } from '../best-lolama/Header'
 import HeroSection from '../best-lolama/HeroSection'
 import MenuHighlightsSection from '../best-lolama/MenuHighlightsSection'
 import PartnerMarqueeSection from '../best-lolama/PartnerMarqueeSection'
+import RecognitionAwardsSection from '../best-lolama/RecognitionAwardsSection'
 import { FRANCHISE_STEPS, FRANCHISE_TIERS, MENU_ITEMS, PARTNERS, VALUE_POINTS } from '../data/best-lolama.data'
 
 type BestLolamaLandingPageProps = {
@@ -63,6 +64,7 @@ function BestLolamaLandingPage({
           onOpenMenuPage={onOpenMenuPage}
         />
         <FranchiseSection franchiseTiers={FRANCHISE_TIERS} franchiseSteps={FRANCHISE_STEPS} />
+        <RecognitionAwardsSection onGoRecognitionAwards={onGoRecognitionAwards} />
         <ContactSection />
       </main>
 
