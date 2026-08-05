@@ -12,6 +12,7 @@ export interface MenuItem {
     | 'Classic Cheese'
     | 'Dubai Collection'
     | 'Munkchin Bites'
+    | 'Drinks'
   description: string
   image: string
   tag?: string
@@ -23,7 +24,6 @@ export interface FranchiseTier {
   space: string
   capital: string
   roi: string
-  adminfee: string
   franchisefee: string
   trainingopeningsupport: string
   renewalat50offranchisefee: string
