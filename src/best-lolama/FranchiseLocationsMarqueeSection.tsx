@@ -26,10 +26,10 @@ const AUTO_ADVANCE_MS = 3500
 const TRANSITION = 'transform 550ms cubic-bezier(0.22, 1, 0.36, 1)'
 
 const SIZE_BREAKPOINTS = [
-  { minWidth: 0, slot: 100, active: 132, neighbor: 78, far: 56 },
-  { minWidth: 480, slot: 120, active: 156, neighbor: 92, far: 66 },
-  { minWidth: 768, slot: 148, active: 188, neighbor: 116, far: 82 },
-  { minWidth: 1024, slot: 176, active: 218, neighbor: 140, far: 98 },
+  { minWidth: 0, slot: 122, active: 162, neighbor: 96, far: 68 },
+  { minWidth: 480, slot: 146, active: 192, neighbor: 114, far: 80 },
+  { minWidth: 768, slot: 180, active: 232, neighbor: 142, far: 100 },
+  { minWidth: 1024, slot: 214, active: 268, neighbor: 172, far: 120 },
 ]
 
 function getSizes(containerWidth: number) {
@@ -177,7 +177,7 @@ function FranchiseLocationsMarqueeSection() {
 
         <div
           ref={wrapperRef}
-          className="overflow-hidden rounded-4xl border border-amber-100 bg-white/90 py-10 shadow-sm"
+          className="overflow-hidden rounded-4xl border border-amber-100 bg-white/90 py-10 shadow-sm sm:py-14"
           style={{
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
             maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
@@ -205,7 +205,11 @@ function FranchiseLocationsMarqueeSection() {
               const targetSize = isActive ? sizes.active : absDistance === 1 ? sizes.neighbor : sizes.far
               const scale = targetSize / sizes.active
               const opacity = isActive ? 1 : absDistance === 1 ? 0.85 : absDistance === 2 ? 0.5 : 0.22
-              const radius = Math.round(sizes.active * 0.16)
+              // The box itself stays fixed at sizes.active and is visually shrunk via
+              // `transform: scale()`, which would also shrink a plain px border-radius
+              // below the 10px minimum on small cards — so compensate for the scale here.
+              const displayRadius = Math.max(10, Math.round(targetSize * 0.16))
+              const radius = displayRadius / scale
 
               return (
                 <div
@@ -238,7 +242,7 @@ function FranchiseLocationsMarqueeSection() {
                     />
                   </button>
                   <p
-                    className="mt-3 text-center text-sm font-bold text-[#3B1A0E] transition-opacity duration-300"
+                    className="mt-4 text-center text-base font-bold text-[#3B1A0E] transition-opacity duration-300 sm:text-lg"
                     style={{ opacity: isActive ? 1 : 0 }}
                   >
                     {franchise.label}
