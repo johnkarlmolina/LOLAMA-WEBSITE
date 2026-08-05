@@ -34,7 +34,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Starter Box',
     description: 'Colorful strawberry glaze with festive sprinkles.',
     image: '/Images/STARTER BOX/STRAWBERRY CANDY.png',
-    tag: 'Best Seller',
   },
   {
     id: 3,
@@ -42,7 +41,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Starter Box',
     description: 'Chocolate layers with a crunchy road-style finish.',
     image: '/Images/STARTER BOX/ROCKY ROAD.png',
-    tag: 'Best Seller',
   },
   {
     id: 2,
@@ -50,7 +48,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Starter Box',
     description: 'Classic sweet glaze with a soft doughnut base.',
     image: '/Images/STARTER BOX/SIGNATURE GLAZE.jpg',
-    tag: 'Classic',
   },
   {
     id: 4,
@@ -79,7 +76,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Premium Box',
     description: 'Rich custard and chocolate topping for a premium bite.',
     image: '/Images/PREMIUM BOX/BOSTON CREAM.png',
-    tag: 'Best Seller',
   },
   {
     id: 9,
@@ -87,7 +83,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Premium Box',
     description: 'Nutty almond flavor with a roasted aroma.',
     image: '/Images/PREMIUM BOX/ALMOND ROAST.png',
-    tag: 'Best Seller',
   },
   {
     id: 8,
@@ -102,7 +97,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Premium Box',
     description: 'Sweet caramel cream with a smooth premium profile.',
     image: '/Images/PREMIUM BOX/CARAMEL MACHIATO.png',
-    tag: 'Popular',
   },
   {
     id: 11,
@@ -124,7 +118,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Sari-Sari Box',
     description: 'Custard-style flavor with nostalgic Filipino sweetness.',
     image: '/Images/SARI-SARI BOX/LECHE FLAN NI LOLA.png',
-    tag: 'Filipino Favorite',
   },
   {
     id: 14,
@@ -167,7 +160,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Royal Box',
     description: 'Lotus-style caramel spice flavor packed into the topping.',
     image: '/Images/ROYAL BOX/BISCOFF OVERLOAD.png',
-    tag: 'Best Seller',
   },
   {
     id: 19,
@@ -210,7 +202,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Classic Cheese',
     description: 'Original cheese doughnut with a familiar crowd-pleasing profile.',
     image: '/Images/CLASSIC CHEESE/CLASSIC CHEESE ORIGINAL.png',
-    tag: 'Best Seller',
   },
   {
     id: 26,
@@ -232,7 +223,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Munkchin Bites',
     description: 'Butternut-style bite-sized treats with a familiar flavor.',
     image: '/Images/MUNKCHIN BITES/butternut.png',
-    tag: 'Best Seller',
   },
   {
     id: 28,
@@ -275,7 +265,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Dubai Collection',
     description: 'Pistachio-forward premium doughnut with a rich finish.',
     image: '/Images/DUBAI COLLECTION/PISTACIO SUPREME.png',
-    tag: 'Best Seller',
   },
   {
     id: 34,
@@ -283,7 +272,6 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     category: 'Dubai Collection',
     description: 'Creamy chocolate with a luxury-inspired Dubai finish.',
     image: '/Images/DUBAI COLLECTION/DUBAI CHOCO CREAM.png',
-    tag: 'Luxury',
   },
   {
     id: 36,

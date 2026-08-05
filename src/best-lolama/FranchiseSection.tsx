@@ -64,9 +64,6 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
                   <span className="font-bold text-[#3B1A0E]">ROI:</span> {tier.roi}
                 </p>
                 <p>
-                  <span className="font-bold text-[#3B1A0E]">Admin Fee:</span> {tier.adminfee}
-                </p>
-                <p>
                   <span className="font-bold text-[#3B1A0E]">Franchise Fee:</span> {tier.franchisefee}
                 </p>
                 <p>

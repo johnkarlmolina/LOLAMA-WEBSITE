@@ -43,7 +43,7 @@ function MenuListItem({ item, onImageClick }: { item: CatalogMenuItem; onImageCl
         onClick={() => onImageClick(item)}
         className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-amber-100 bg-amber-50 transition-transform duration-500 ease-out hover:scale-110 sm:h-24 sm:w-24"
       >
-        <img src={encodeURI(item.image)} alt={item.name} className="h-full w-full object-cover" />
+        <img src={encodeURI(item.image)} alt={item.name} className="h-full w-full object-contain" />
       </button>
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
