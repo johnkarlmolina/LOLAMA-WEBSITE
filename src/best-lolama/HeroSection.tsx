@@ -19,8 +19,10 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
               Handmade Love Doughnuts — Made Fresh Daily For You
             </h1>
             <p className="max-w-2xl text-base leading-8 text-[#6e3d25] sm:text-lg">
-              Warm, affordable, and made with pure passion for Filipino families. Best Lolama brings premium taste,
-              approachable pricing, and a franchise model designed for high-traffic communities.
+              <span className="font-bold text-[#3B1A0E]">Proudly Filipino home-grown</span>, Best Lolama is built
+              with pure passion for Filipino families, delivering premium taste at approachable prices. We celebrate
+              local flavors while offering a franchise model designed for high-traffic communities, making it
+              easier for entrepreneurs to grow with a business that Filipinos know and love.
             </p>
           </div>
 
