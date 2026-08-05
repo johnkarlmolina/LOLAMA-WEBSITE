@@ -37,7 +37,7 @@ function MenuHighlightsSection({
                   <img
                     src={encodeURI(item.image)}
                     alt={item.name}
-                    className="h-full w-full object-contain"
+                    className={`h-full w-full ${item.category === 'Drinks' ? 'object-contain' : 'object-cover'}`}
                     onError={() => onImageError(item.id)}
                   />
                 ) : (
