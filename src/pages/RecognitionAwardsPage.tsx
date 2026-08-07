@@ -67,107 +67,249 @@ function RecognitionAwardsPage({
           </p>
         </section>
 
-        {/* GMA Video Section */}
-        <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
-            <div className="w-full md:w-1/2">
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
-                <iframe
-                  src="https://www.youtube.com/embed/58oPB226pjM"
-                  title="GMA Unang Hirit - Best Lolama"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute left-0 top-0 h-full w-full"
-                ></iframe>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2">
-              <blockquote className="border-l-4 border-amber-700 pl-6">
-                <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
-                  &quot;Featured on <i>GMA Network&apos;s Unang Hirit</i> on November 2, 2023,
-                  Best Lolama showcased its dedication to crafting freshly baked,
-                  high-quality, and affordable doughnuts, delivering exceptional
-                  taste and value to Filipino customers.&quot;
-                </p>
-                <footer className="mt-4">
-                  <p className="font-bold uppercase tracking-wider text-amber-700">
-                    <i>GMA Network</i>
-                  </p>
-                  <p className="text-sm text-[#6e3d25]">Unang Hirit · November 2, 2023</p>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </section>
+       {/* ========== 2023 ========== */}
 
-        {/* YouTube Video Section */}
-        <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
-            {/* Text - Left */}
-            <div className="w-full md:w-1/2">
-              <blockquote className="border-r-4 border-amber-700 pr-6 text-right">
-                <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
-                  &quot;During an interview on <i>RDR Talks</i> on May 12, 2024,
-                  the founders of Best Lolama shared the inspiring story behind
-                  the brand&apos;s success, their entrepreneurial journey, and their
-                  commitment to delivering freshly baked, high-quality doughnuts.&quot;
-                </p>
-                <footer className="mt-4">
-                  <p className="font-bold uppercase tracking-wider text-amber-700">
-                    <i>RDR Talks</i>
-                  </p>
-                  <p className="text-sm text-[#6e3d25]">May 12, 2024</p>
-                </footer>
-              </blockquote>
-            </div>
-            {/* YouTube Video - Right */}
-            <div className="w-full md:w-1/2">
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
-                <iframe
-                  src="https://www.youtube.com/embed/HgE8OK5Hnx8?enablejsapi=1"
-                  title="RDR Talks - Best Lolama"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute left-0 top-0 h-full w-full"
-                ></iframe>
-              </div>
+      {/* GMA Video Section - November 2, 2023 */}
+      {/* LAYOUT: Video LEFT | Text RIGHT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/58oPB226pjM"
+                title="GMA Unang Hirit - Best Lolama"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
             </div>
           </div>
-        </section>
+          <div className="w-full md:w-1/2">
+            <blockquote className="border-l-4 border-amber-700 pl-6">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;Featured on <i>GMA Network&apos;s Unang Hirit</i> on November 2, 2023,
+                Best Lolama showcased its dedication to crafting freshly baked,
+                high-quality, and affordable doughnuts, delivering exceptional
+                taste and value to Filipino customers.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>GMA Network</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">Unang Hirit · November 2, 2023</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
 
-        {/* DWIZ 882 Video Section */}
-        <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
-            <div className="w-full md:w-1/2">
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
-                <iframe
-                  src="https://www.youtube.com/embed/6BLUUkxXRWM"
-                  title="DWIZ 882 - Best Lolama"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute left-0 top-0 h-full w-full"
-                ></iframe>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2">
-              <blockquote className="border-l-4 border-amber-700 pl-6">
-                <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
-                   &quot;On August 27, 2025, Best Lolama joined <i>DWIZ 882</i> as a guest co-host 
-                  to discuss workplace issues affecting many businesses, including employee 
-                  absenteeism, AWOL, and resignations without proper notice. The conversation 
-                  emphasized the importance of professionalism, mutual respect, and effective 
-                  communication in building a responsible and productive workplace culture.&quot;
+      {/* ========== 2024 ========== */}
+
+      {/* RDR Talks - May 12, 2024 */}
+      {/* LAYOUT: Video RIGHT | Text LEFT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <blockquote className="border-r-4 border-amber-700 pr-6 text-right">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;During an interview on <i>RDR Talks</i> on May 12, 2024,
+                the founders of Best Lolama shared the inspiring story behind
+                the brand&apos;s success, their entrepreneurial journey, and their
+                commitment to delivering freshly baked, high-quality doughnuts.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>RDR Talks</i>
                 </p>
-                <footer className="mt-4">
-                  <p className="font-bold uppercase tracking-wider text-amber-700">
-                    <i>DWIZ 882</i>
-                  </p>
-                  <p className="text-sm text-[#6e3d25]">August 27, 2025</p>
-                </footer>
-              </blockquote>
+                <p className="text-sm text-[#6e3d25]">May 12, 2024</p>
+              </footer>
+            </blockquote>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/HgE8OK5Hnx8?enablejsapi=1"
+                title="RDR Talks - Best Lolama"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      {/* Masaraaap Nga - August 15, 2024 */}
+      {/* LAYOUT: Video LEFT | Text RIGHT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/DZMmxumeqfE"
+                title="Masaraaap Nga"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <blockquote className="border-l-4 border-amber-700 pl-6">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;Featured on <i>Masaraap Nga</i>, Best Lolama showcased its visually elevated, world-class doughnuts, highlighting the brand's premium quality 
+                and exceptional taste. The feature praised the delicious flavors while spotlighting two of Best Lolama's bestsellers—<b>Leche Flan ni Lola</b> and <b>Mango Pilipino</b>—for 
+                their unique Filipino-inspired taste and outstanding presentation.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>Masaraaap Nga</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">August 15, 2024</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 2025 ========== */}
+
+      {/* Franchise Republic - April 4, 2025 */}
+      {/* LAYOUT: Video RIGHT | Text LEFT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <blockquote className="border-r-4 border-amber-700 pr-6 text-right">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;Featured on <i>Franchise Republic</i>, Best Lolama showcased its delicious doughnuts, diverse menu offerings, and comprehensive franchise packages. 
+                The episode highlighted the franchise process, package inclusions, hands-on training, and full business support, while providing aspiring franchisees with 
+                the information they need to start their journey with Best Lolama.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>Franchise Republic</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">April 4, 2025</p>
+              </footer>
+            </blockquote>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/_YPl1UHPgbk"
+                title="Franchise Republic - Best Lolama"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Kristina Po Shinjiru - April 17, 2025 */}
+      {/* LAYOUT: Video LEFT | Text RIGHT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/Db5LKomGjaM"
+                title="Kristina Po Shinjiru"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <blockquote className="border-l-4 border-amber-700 pl-6">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;On April 17, 2025, Best Lolama was featured on <i>Kristina Po Shinjiru</i>,
+                highlighting the brand&apos;s journey and its commitment to quality
+                doughnuts that Filipinos love.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>Kristina Po Shinjiru</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">April 17, 2025</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* DWIZ 882 - August 27, 2025 */}
+      {/* LAYOUT: Video RIGHT | Text LEFT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <blockquote className="border-r-4 border-amber-700 pr-6 text-right">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;On August 27, 2025, Best Lolama joined <i>DWIZ 882</i> as a guest co-host 
+                to discuss workplace issues affecting many businesses, including employee 
+                absenteeism, AWOL, and resignations without proper notice. The conversation 
+                emphasized the importance of professionalism, mutual respect, and effective 
+                communication in building a responsible and productive workplace culture.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>DWIZ 882</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">August 27, 2025</p>
+              </footer>
+            </blockquote>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/6BLUUkxXRWM"
+                title="DWIZ 882 - Best Lolama"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 2026 ========== */}
+
+      {/* Best Finds Tv - July 14, 2026 */}
+      {/* LAYOUT: Video LEFT | Text RIGHT */}
+      <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/CjkmXkucXmo"
+                title="Best Finds Tv - Best Lolama"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute left-0 top-0 h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <blockquote className="border-l-4 border-amber-700 pl-6">
+              <p className="text-justify text-base leading-8 text-[#6e3d25] md:text-lg">
+                &quot;Featured on <i>Best Finds Tv</i>, Best Lolama highlighted its simple and accessible franchise process, 
+                premium-quality products, affordable pricing, comprehensive support, and no royalty fee. 
+                It also emphasized that OFWs can conveniently monitor their franchise remotely through its digital system.&quot;
+              </p>
+              <footer className="mt-4">
+                <p className="font-bold uppercase tracking-wider text-amber-700">
+                  <i>Best Finds Tv</i>
+                </p>
+                <p className="text-sm text-[#6e3d25]">July 14, 2026</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
           
         {/* Awards & Recognition Section */}
         <section className="mt-8 rounded-4xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
