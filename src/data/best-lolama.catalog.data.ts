@@ -201,7 +201,7 @@ export const MENU_CATALOG_ITEMS: CatalogMenuItem[] = [
     name: 'Classic Cheese Original',
     category: 'Classic Cheese',
     description: 'Original cheese doughnut with a familiar crowd-pleasing profile.',
-    image: '/Images/CLASSIC CHEESE/CLASSIC CHEESE ORIGINAL.png',
+    image: '/Images/CLASSIC CHEESE/classic-cheese.jpg',
   },
   {
     id: 26,
