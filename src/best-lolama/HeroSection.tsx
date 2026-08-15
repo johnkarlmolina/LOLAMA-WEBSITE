@@ -2,9 +2,10 @@ import { Award, CheckCircle, ChevronRight } from 'lucide-react'
 
 type HeroSectionProps = {
   onOpenMenuPage: () => void
+  onGoContact: () => void
 }
 
-function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
+function HeroSection({ onOpenMenuPage, onGoContact }: HeroSectionProps) {
   return (
     <section className="scroll-mt-28 py-8 sm:py-12 lg:py-16">
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
@@ -27,19 +28,13 @@ function HeroSection({ onOpenMenuPage }: HeroSectionProps) {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={onGoContact}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3B1A0E] px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-amber-900/15 transition hover:-translate-y-0.5 hover:bg-amber-700"
             >
               Inquire for Franchise
               <ChevronRight className="h-4 w-4" />
-            </a>
-            <button
-              type="button"
-              onClick={onOpenMenuPage}
-              className="inline-flex items-center justify-center rounded-full border border-amber-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#3B1A0E] transition hover:border-amber-400 hover:bg-amber-50"
-            >
-              Explore Menu
             </button>
           </div>
 

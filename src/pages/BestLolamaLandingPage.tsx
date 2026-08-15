@@ -48,13 +48,13 @@ function BestLolamaLandingPage({
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onOpenMenuPage, current: false },
           { label: 'Franchise', onClick: onGoFranchise },
-          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+          { label: 'Achievement', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />
 
       <main id="home" className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
-        <HeroSection onOpenMenuPage={onOpenMenuPage} />
+        <HeroSection onOpenMenuPage={onOpenMenuPage} onGoContact={onGoContact} />
         <AboutSection valuePoints={VALUE_POINTS} />
         <RecognitionAwardsSection onGoRecognitionAwards={onGoRecognitionAwards} />
         <MenuHighlightsSection
@@ -73,7 +73,7 @@ function BestLolamaLandingPage({
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
-          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+          { label: 'Achievement', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />

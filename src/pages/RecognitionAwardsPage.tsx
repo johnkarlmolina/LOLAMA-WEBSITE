@@ -24,7 +24,7 @@ function RecognitionAwardsPage({
     { label: 'About Us', onClick: onGoAbout },
     { label: 'Menu', onClick: onGoMenu },
     { label: 'Franchise', onClick: onGoFranchise },
-    { label: 'Recognition & Awards', current: true },
+    { label: 'Achievement', current: true },
     { label: 'Contact Us', onClick: onGoContact },
   ] satisfies readonly HeaderNavItem[]
 
