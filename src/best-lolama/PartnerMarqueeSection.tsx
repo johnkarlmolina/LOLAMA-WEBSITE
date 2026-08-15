@@ -20,7 +20,7 @@ function PartnerMarqueeSection({ partners }: PartnerMarqueeSectionProps) {
     </div>
   </div>
   
-  <div className="overflow-hidden rounded-4xl border border-amber-100 bg-white/90 p-4 shadow-sm">
+  <div className="overflow-hidden">
     <div className="marquee-track gap-4 py-2">
       {[...partners, ...partners].map((partner, index) => {
         const normalizedPartner = partner.trim().toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
