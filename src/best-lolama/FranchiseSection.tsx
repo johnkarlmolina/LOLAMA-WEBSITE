@@ -42,12 +42,12 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
           {franchiseTiers.map((tier) => (
             <article
               key={tier.title}
-              className={`rounded-4xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+              className={`rounded-4xl border bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:text-left ${
                 tier.featured ? 'border-amber-400 ring-1 ring-amber-400/40' : 'border-amber-100'
               }`}
             >
               {tier.featured ? (
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.24em] text-amber-800">
+                <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.24em] text-amber-800 lg:mx-0">
                   <Star className="h-3.5 w-3.5" />
                   Featured
                 </div>
@@ -81,7 +81,10 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
               </div>
               <div className="mt-6 space-y-3 border-t border-amber-100 pt-5">
                 {tier.features.map((feature) => (
-                  <div key={feature} className="flex items-start gap-2 text-sm text-[#5b2d18]">
+                  <div
+                    key={feature}
+                    className="flex items-start justify-center gap-2 text-sm text-[#5b2d18] lg:justify-start"
+                  >
                     <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
                     <span>{feature}</span>
                   </div>

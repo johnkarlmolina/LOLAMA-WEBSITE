@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import AboutSection from '../best-lolama/AboutSection'
-import ContactSection from '../best-lolama/ContactSection'
 import Footer from '../best-lolama/Footer'
 import FranchiseLocationsMarqueeSection from '../best-lolama/FranchiseLocationsMarqueeSection'
 import FranchiseSection from '../best-lolama/FranchiseSection'
@@ -56,8 +55,8 @@ function BestLolamaLandingPage({
 
       <main id="home" className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
         <HeroSection onOpenMenuPage={onOpenMenuPage} />
-        <PartnerMarqueeSection partners={PARTNERS} />
         <AboutSection valuePoints={VALUE_POINTS} />
+        <RecognitionAwardsSection onGoRecognitionAwards={onGoRecognitionAwards} />
         <MenuHighlightsSection
           filteredItems={MENU_ITEMS}
           imageErrors={imageErrors}
@@ -66,8 +65,7 @@ function BestLolamaLandingPage({
         />
         <FranchiseSection franchiseTiers={FRANCHISE_TIERS} franchiseSteps={FRANCHISE_STEPS} />
         <FranchiseLocationsMarqueeSection />
-        <RecognitionAwardsSection onGoRecognitionAwards={onGoRecognitionAwards} />
-        <ContactSection />
+        <PartnerMarqueeSection partners={PARTNERS} />
       </main>
 
       <Footer
