@@ -12,6 +12,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+button,
+[role="button"] {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }

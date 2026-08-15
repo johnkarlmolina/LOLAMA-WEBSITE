@@ -38,7 +38,7 @@ function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, onFran
                 <button
                   type="button"
                   onClick={menuItem.onClick}
-                  className={`whitespace-nowrap text-sm font-bold uppercase tracking-wide transition ${
+                  className={`whitespace-nowrap text-sm font-black uppercase tracking-wide transition ${
                     menuItem.current ? 'text-amber-700' : 'text-[#5a2c16] hover:text-amber-600'
                   }`}
                 >
@@ -47,14 +47,14 @@ function Header({ mobileMenuOpen, onToggleMenu, onCloseMenu, onLogoClick, onFran
               ) : menuItem.href ? (
                 <a
                   href={menuItem.href}
-                  className={`whitespace-nowrap text-sm font-bold uppercase tracking-wide transition ${
+                  className={`whitespace-nowrap text-sm font-black uppercase tracking-wide transition ${
                     menuItem.current ? 'text-amber-700' : 'text-[#5a2c16] hover:text-amber-600'
                   }`}
                 >
                   {menuItem.label}
                 </a>
               ) : (
-                <span className="cursor-default select-none whitespace-nowrap text-sm font-bold uppercase tracking-wide text-amber-700">
+                <span className="cursor-default select-none whitespace-nowrap text-sm font-black uppercase tracking-wide text-amber-700">
                   {menuItem.label}
                 </span>
               )}
