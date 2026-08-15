@@ -34,7 +34,7 @@ function ContactPage({
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
-          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+          { label: 'Achievement', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', current: true },
         ] satisfies readonly HeaderNavItem[]}
       />
@@ -61,7 +61,7 @@ function ContactPage({
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', onClick: onGoMenu },
           { label: 'Franchise', onClick: onGoFranchise },
-          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+          { label: 'Achievement', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', current: true },
         ] satisfies readonly HeaderNavItem[]}
       />

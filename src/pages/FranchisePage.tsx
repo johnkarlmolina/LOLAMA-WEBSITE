@@ -27,7 +27,7 @@ function FranchisePage({
     { label: 'About Us', onClick: onGoAbout },
     { label: 'Menu', onClick: onGoMenu },
     { label: 'Franchise', current: true },
-    { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+    { label: 'Achievement', onClick: onGoRecognitionAwards },
     { label: 'Contact Us', onClick: onGoContact },
   ] satisfies readonly HeaderNavItem[]
 

@@ -106,7 +106,7 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
           { label: 'About Us', onClick: onGoAbout },
           { label: 'Menu', current: true },
           { label: 'Franchise', onClick: onGoFranchise },
-          { label: 'Recognition & Awards', onClick: onGoRecognitionAwards },
+          { label: 'Achievement', onClick: onGoRecognitionAwards },
           { label: 'Contact Us', onClick: onGoContact },
         ] satisfies readonly HeaderNavItem[]}
       />
