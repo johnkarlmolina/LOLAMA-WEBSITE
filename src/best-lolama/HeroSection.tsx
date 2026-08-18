@@ -1,4 +1,4 @@
-import { Award, CheckCircle, ChevronRight } from 'lucide-react'
+import { CheckCircle, ChevronRight } from 'lucide-react'
 
 type HeroSectionProps = {
   onOpenMenuPage: () => void
@@ -10,11 +10,6 @@ function HeroSection({ onOpenMenuPage, onGoContact }: HeroSectionProps) {
     <section className="scroll-mt-28 py-8 sm:py-12 lg:py-16">
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-amber-700 shadow-sm">
-            <Award className="h-4 w-4" />
-            Handmade Love Doughnuts
-          </div>
-
           <div className="space-y-5">
             <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-[#3B1A0E] sm:text-5xl lg:text-6xl">
               Handmade Love Doughnuts — Made Fresh Daily For You
@@ -64,7 +59,7 @@ function HeroSection({ onOpenMenuPage, onGoContact }: HeroSectionProps) {
                       </defs>
                       <text className="text-[6px] font-black fill-[#3B1A0E] tracking-[0.08em] uppercase">
                         <textPath href="#textCircle" startOffset="0%">
-                          • Fresh Daily • Made for Sharing ✦ Quality • Since Day One • HandMade Love ✦
+                        Fresh Daily • Made for Sharing ✦ Quality • Since Day One • HandMade Love ✦
                         </textPath>
                       </text>
                     </svg>
