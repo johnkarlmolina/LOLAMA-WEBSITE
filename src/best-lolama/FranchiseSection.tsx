@@ -10,8 +10,6 @@ type FranchiseSectionProps = {
 function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionProps) {
   const [areStepsVisible, setAreStepsVisible] = useState(false)
   const stepsRef = useRef<HTMLDivElement>(null)
-  const sliderRef = useRef<HTMLDivElement>(null)
-  const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
     const node = stepsRef.current
@@ -27,33 +25,6 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
     observer.observe(node)
     return () => observer.disconnect()
   }, [])
-
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    touchStartX.current = event.touches[0].clientX
-  }
-
-  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (touchStartX.current === null) return
-
-    const touchEndX = event.changedTouches[0].clientX
-    const diff = touchStartX.current - touchEndX
-
-    if (Math.abs(diff) < 40) {
-      touchStartX.current = null
-      return
-    }
-
-    const slider = sliderRef.current
-    if (!slider) {
-      touchStartX.current = null
-      return
-    }
-
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth
-    const nextScrollLeft = Math.min(Math.max(slider.scrollLeft + diff, 0), maxScrollLeft)
-    slider.scrollTo({ left: nextScrollLeft, behavior: 'smooth' })
-    touchStartX.current = null
-  }
 
   return (
     <>
@@ -135,24 +106,27 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
   <div className="lg:hidden">
     <div className="overflow-hidden">
       <div
-        ref={sliderRef}
-        className="flex snap-x snap-mandatory overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        style={{ touchAction: 'pan-y', overscrollBehaviorX: 'contain', WebkitOverflowScrolling: 'touch' }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        style={{
+          scrollSnapType: 'x mandatory',
+          WebkitOverflowScrolling: 'touch',
+          touchAction: 'pan-y',
+          overscrollBehaviorX: 'contain',
+        }}
       >
         {franchiseSteps.map((step, index) => (
           <div
             key={step}
-            className="min-h-[220px] min-w-full shrink-0 snap-start rounded-2xl border border-amber-100 bg-white p-5 shadow-sm sm:min-h-[240px]"
+            className="w-[calc(100vw-2.5rem)] shrink-0 snap-start rounded-2xl border border-amber-100 bg-white p-3 shadow-sm"
+            style={{ minHeight: '180px' }}
           >
-            <div className="flex items-center justify-between border-b border-amber-100/60 pb-3">
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-amber-700">Step</span>
-              <span className="text-xl font-black text-amber-600">
+            <div className="flex items-center justify-between border-b border-amber-100/60 pb-2">
+              <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-amber-700">Step</span>
+              <span className="text-lg font-black text-amber-600">
                 {String(index + 1).padStart(2, '0')}
               </span>
             </div>
-            <h3 className="mt-4 text-sm font-bold leading-relaxed text-[#3B1A0E]">{step}</h3>
+            <h3 className="mt-3 text-[13px] font-bold leading-[1.45] text-[#3B1A0E]">{step}</h3>
           </div>
         ))}
       </div>
