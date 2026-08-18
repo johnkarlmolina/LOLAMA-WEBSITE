@@ -22,19 +22,44 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'auto' })
   }, [page, contactScrollTarget])
 
-  const goHome = () => setPage('home')
-  const goMenu = () => setPage('menu')
-  const goAbout = () => setPage('about')
-  const goFranchise = () => setPage('franchise')
-  const goContact = () => {
-    setContactScrollTarget('top')
-    setPage('contact')
+  useEffect(() => {
+    const handlePopState = () => {
+      const previousPage = (window.history.state as { page?: Page } | null)?.page ?? 'home'
+      setPage(previousPage)
+      setContactScrollTarget('top')
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  useEffect(() => {
+    if (!window.history.state || (window.history.state as { page?: Page } | null)?.page !== page) {
+      window.history.replaceState({ page }, '', `#${page}`)
+    }
+  }, [page])
+
+  const navigateToPage = (nextPage: Page, nextTarget: ContactScrollTarget = 'top') => {
+    if (nextPage === 'contact') {
+      setContactScrollTarget(nextTarget)
+    }
+
+    if (window.history.state && (window.history.state as { page?: Page } | null)?.page === nextPage) {
+      setPage(nextPage)
+      return
+    }
+
+    window.history.pushState({ page: nextPage }, '', `#${nextPage}`)
+    setPage(nextPage)
   }
-  const goRecognitionAwards = () => setPage('recognition-awards')
-  const goFranchiseNow = () => {
-    setContactScrollTarget('contact-form')
-    setPage('contact')
-  }
+
+  const goHome = () => navigateToPage('home')
+  const goMenu = () => navigateToPage('menu')
+  const goAbout = () => navigateToPage('about')
+  const goFranchise = () => navigateToPage('franchise')
+  const goContact = () => navigateToPage('contact', 'top')
+  const goRecognitionAwards = () => navigateToPage('recognition-awards')
+  const goFranchiseNow = () => navigateToPage('contact', 'contact-form')
 
   if (page === 'menu') {
     return (
