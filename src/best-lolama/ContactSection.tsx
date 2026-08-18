@@ -118,26 +118,20 @@ function ContactSection() {
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <a
-              href="tel:09166976114"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 transition hover:bg-white/15"
-            >
+            <div className="flex items-center gap-3 px-4 py-4">
               <Phone className="h-5 w-5 text-amber-200" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Phone</p>
                 <p className="text-sm font-semibold sm:text-base">0916-697-6114</p>
               </div>
-            </a>
-            <a
-              href="mailto:franchisebestlolama@gmail.com"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 transition hover:bg-white/15"
-            >
+            </div>
+            <div className="flex items-center gap-3 px-4 py-4">
               <Mail className="h-5 w-5 text-amber-200" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Email</p>
-                <p className="break-all text-sm font-semibold sm:text-base">franchisebestlolama@gmail.com</p>
+                <p className="whitespace-nowrap text-sm font-semibold">franchisebestlolama@gmail.com</p>
               </div>
-            </a>
+            </div>
           </div>
 
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
@@ -147,9 +141,7 @@ function ContactSection() {
 
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Website</p>
-            <a href="https://bestlolama.com.ph" className="inline-block break-all text-sm font-semibold text-white hover:text-amber-200 sm:text-base">
-              bestlolama.com.ph
-            </a>
+            <p className="whitespace-nowrap text-sm font-semibold sm:text-base">bestlolama.com.ph</p>
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3">

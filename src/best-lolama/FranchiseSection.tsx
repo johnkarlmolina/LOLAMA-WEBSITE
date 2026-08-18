@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { CheckCircle, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import type { FranchiseTier } from '../types/best-lolama.types'
 
 type FranchiseSectionProps = {
@@ -63,7 +63,7 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="no-justify grid gap-6 lg:grid-cols-3">
           {franchiseTiers.map((tier) => (
             <article
               key={tier.title}
@@ -103,17 +103,6 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
                 <p>
                   <span className="font-bold text-[#3B1A0E]">System:</span> {tier.systemstandard}
                 </p>
-              </div>
-              <div className="mt-6 space-y-3 border-t border-amber-100 pt-5">
-                {tier.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-start justify-center gap-2 text-sm text-[#5b2d18] lg:justify-start"
-                  >
-                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
               </div>
             </article>
           ))}

@@ -24,6 +24,14 @@ button,
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
 }
 
+p {
+  text-align: justify;
+}
+
+.no-justify p {
+  text-align: left;
+}
+
 html {
   scroll-behavior: smooth;
 }
