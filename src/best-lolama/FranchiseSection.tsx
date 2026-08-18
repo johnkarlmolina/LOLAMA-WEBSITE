@@ -11,6 +11,10 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
   const [areStepsVisible, setAreStepsVisible] = useState(false)
   const stepsRef = useRef<HTMLDivElement>(null)
 
+  const [activeStepIndex, setActiveStepIndex] = useState(0)
+  const stepsScrollRef = useRef<HTMLDivElement>(null)
+  const stepCardRefs = useRef<(HTMLDivElement | null)[]>([])
+
   useEffect(() => {
     const node = stepsRef.current
     if (!node) return
@@ -25,6 +29,27 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
     observer.observe(node)
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const container = stepsScrollRef.current
+    const cards = stepCardRefs.current.filter((card): card is HTMLDivElement => card !== null)
+    if (!container || cards.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+            const index = cards.indexOf(entry.target as HTMLDivElement)
+            if (index !== -1) setActiveStepIndex(index)
+          }
+        })
+      },
+      { root: container, threshold: [0.6] },
+    )
+
+    cards.forEach((card) => observer.observe(card))
+    return () => observer.disconnect()
+  }, [franchiseSteps])
 
   return (
     <>
@@ -106,30 +131,45 @@ function FranchiseSection({ franchiseTiers, franchiseSteps }: FranchiseSectionPr
   <div className="lg:hidden">
     <div className="overflow-hidden">
       <div
-        className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        ref={stepsScrollRef}
+        className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         style={{
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
-          touchAction: 'pan-y',
+          touchAction: 'pan-x',
           overscrollBehaviorX: 'contain',
         }}
       >
         {franchiseSteps.map((step, index) => (
           <div
             key={step}
+            ref={(el) => {
+              stepCardRefs.current[index] = el
+            }}
             className="w-[calc(100vw-2.5rem)] shrink-0 snap-start rounded-2xl border border-amber-100 bg-white p-3 shadow-sm"
-            style={{ minHeight: '180px' }}
+            style={{ minHeight: '120px' }}
           >
-            <div className="flex items-center justify-between border-b border-amber-100/60 pb-2">
+            <div className="flex items-center justify-between border-b border-amber-100/60 pb-1.5">
               <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-amber-700">Step</span>
               <span className="text-lg font-black text-amber-600">
                 {String(index + 1).padStart(2, '0')}
               </span>
             </div>
-            <h3 className="mt-3 text-[13px] font-bold leading-[1.45] text-[#3B1A0E]">{step}</h3>
+            <h3 className="mt-2 text-[13px] font-bold leading-[1.4] text-[#3B1A0E]">{step}</h3>
           </div>
         ))}
       </div>
+    </div>
+
+    <div className="mt-3 flex items-center justify-center gap-1.5">
+      {franchiseSteps.map((step, index) => (
+        <span
+          key={step}
+          className={`h-1.5 rounded-full transition-all duration-300 ${
+            index === activeStepIndex ? 'w-4 bg-amber-600' : 'w-1.5 bg-amber-200'
+          }`}
+        />
+      ))}
     </div>
   </div>
 
