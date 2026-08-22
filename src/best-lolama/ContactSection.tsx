@@ -136,12 +136,12 @@ function ContactSection() {
 
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">General Franchise Manager</p>
-            <p className="text-sm font-semibold sm:text-base">Cathlenn Japson</p>
+            <p className="text-sm font-semibold sm:text-base">Cathleen Japson</p>
           </div>
 
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Website</p>
-            <p className="whitespace-nowrap text-sm font-semibold sm:text-base">bestlolama.com.ph</p>
+            <p className="whitespace-nowrap text-sm font-semibold sm:text-base">bestlolama.com</p>
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3">
