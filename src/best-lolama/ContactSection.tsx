@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, Smartphone } from 'lucide-react'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import Swal from 'sweetalert2'
 
@@ -119,10 +119,17 @@ function ContactSection() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="flex items-center gap-3 px-4 py-4">
-              <Phone className="h-5 w-5 text-amber-200" />
+              <Smartphone className="h-5 w-5 text-amber-200" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Phone</p>
                 <p className="text-sm font-semibold sm:text-base">0916-697-6114</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-4">
+              <Phone className="h-5 w-5 text-amber-200" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100">Telephone</p>
+                <p className="text-sm font-semibold sm:text-base">046-437-8690</p>
               </div>
             </div>
             <div className="flex items-center gap-3 px-4 py-4">
