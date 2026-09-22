@@ -94,6 +94,10 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
     return map
   }, [])
 
+  const scrollToCategory = (category: string) => {
+    document.getElementById(slugify(category))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#fff9ef_0%,#fffdf9_40%,#fff6e8_100%)] text-[#3B1A0E]">
       <Header
@@ -141,21 +145,23 @@ function MenuPage({ onGoAbout, onGoFranchise, onGoContact, onGoRecognitionAwards
               <div className="sticky top-24 space-y-6">
                 {CATEGORY_GROUPS.map((group) => (
                   <div key={group.label}>
-                    <a
-                      href={`#${slugify(group.label)}`}
+                    <button
+                      type="button"
+                      onClick={() => scrollToCategory(group.label)}
                       className="text-sm font-black uppercase tracking-wide text-[#3B1A0E] hover:text-amber-700"
                     >
                       {group.label}
-                    </a>
+                    </button>
                     <ul className="mt-2 space-y-1.5 border-l border-amber-100 pl-3">
                       {group.categories.map((category) => (
                         <li key={category}>
-                          <a
-                            href={`#${slugify(category)}`}
+                          <button
+                            type="button"
+                            onClick={() => scrollToCategory(category)}
                             className="block text-sm text-[#7a513c] transition hover:text-amber-700"
                           >
                             {category}
-                          </a>
+                          </button>
                         </li>
                       ))}
                     </ul>
